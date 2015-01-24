@@ -57,7 +57,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\game.css" />
     <Content Include="index.html" />
+    <Content Include="scripts\libs\game.js" />
+    <Content Include="scripts\libs\impress.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -71,10 +74,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="libs\" />
-    <Folder Include="scripts\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
