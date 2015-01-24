@@ -57,3 +57,12 @@
     white-space: nowrap;
 }
 
+.slide .slide-text{
+    height:450px;
+}
+
+div.menu{
+    border-top:2px solid black;
+    padding-top:25px;
+    text-align:center;
+}

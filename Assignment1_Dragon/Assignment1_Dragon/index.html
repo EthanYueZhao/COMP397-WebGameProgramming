@@ -1,16 +1,48 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"  />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>The Ledgend of a Dragon</title>
+
     <!--CSS Section-->
     <link href="css/reset.css" rel="stylesheet" />
     <link href="css/game.css" rel="stylesheet" />
 </head>
 <body onload="main();">
-    
 
+    <div id="impress">
+        <!--1st slide-->
+        <div id="1" class="step slide">
+            <div class="slide-text">
+                <p>This is the first slide</p>
+                <p><a href="#2">go to 2</a></p>
+                <p><a href="#3">go to 3</a></p>
+            </div>
+        </div>
+
+
+        <!--2nd slide-->
+        <div id="2" class="step slide" data-x="1500" >
+            <div class="slide-text">
+                <p>this is slide 2</p>
+            </div>
+            <div class="menu"><a href="#1">Start Over</a></div>
+        </div>
+
+        <!--3rd slide-->
+        <div id="3" class="step slide" data-x="-1500">
+            <div class="slide-text">
+                <p>this is slide 3</p>
+            </div>
+            <div class="menu"><a href="#1">Start Over</a></div>
+        </div>
+
+
+
+
+    </div>
 
     <!--JavaScript Section-->
     <script src="scripts/libs/impress.js"></script>
