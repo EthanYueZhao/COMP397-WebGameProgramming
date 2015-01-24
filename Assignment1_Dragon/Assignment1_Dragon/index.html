@@ -13,35 +13,164 @@
 <body onload="main();">
 
     <div id="impress">
-        <!--1st slide-->
+        <!--Slide 1: Goto 2 or 3-->
         <div id="1" class="step slide">
             <div class="slide-text">
                 <p>This is the first slide</p>
+
+                <!--Selection part-->
                 <p><a href="#2">go to 2</a></p>
-                <p><a href="#3">go to 3</a></p>
+                <p><a href="#3">go to 3</a></p>                
             </div>
         </div>
 
 
-        <!--2nd slide-->
-        <div id="2" class="step slide" data-x="1500" >
+        <!--Slide 2: Goto 4 or 5-->
+        <div id="2" class="step slide" data-x="-1500"  >
             <div class="slide-text">
                 <p>this is slide 2</p>
+
+                <!--Selection part-->
+                <p><a href="#4">go to 4</a></p>
+                <p><a href="#5">go to 5</a></p>
             </div>
             <div class="menu"><a href="#1">Start Over</a></div>
         </div>
 
-        <!--3rd slide-->
-        <div id="3" class="step slide" data-x="-1500">
+        <!--Slide 3: Goto 6 or 7-->
+        <div id="3" class="step slide" data-x="1500">
             <div class="slide-text">
                 <p>this is slide 3</p>
+
+                <!--Selection part-->
+                <p><a href="#6">go to 6</a></p>
+                <p><a href="#7">go to 7</a></p>
+            </div>
+            <div class="menu"><a href="#1">Start Over</a></div>
+        </div>
+
+        <!--Slide 4: Goto Failure f1 or f2-->
+        <div id="4" class="step slide" data-x="-3000" data-y="-3000">
+            <div class="slide-text">
+                <p>this is slide 4</p>
+
+                <!--Selection part-->
+                <p><a href="#f1">go to f1</a></p>
+                <p><a href="#f2">go to f2</a></p>
+            </div>
+            <div class="menu"><a href="#1">Start Over</a></div>
+        </div>
+
+        <!--Slide 5: Goto Failure f3 or f4-->
+        <div id="5" class="step slide" data-x="-3000" data-y="3000">
+            <div class="slide-text">
+                <p>this is slide 5</p>
+
+                <!--Selection part-->
+                <p><a href="#f3">go to f3</a></p>
+                <p><a href="#f4">go to f4</a></p>
+            </div>
+            <div class="menu"><a href="#1">Start Over</a></div>
+        </div>
+
+        <!--Slide 6: Goto Failure f5 or f6-->
+        <div id="6" class="step slide" data-x="3000" data-y="-3000">
+            <div class="slide-text">
+                <p>this is slide 6</p>
+
+                <!--Selection part-->
+                <p><a href="#f5">go to f5</a></p>
+                <p><a href="#f6">go to f6</a></p>
+            </div>
+            <div class="menu"><a href="#1">Start Over</a></div>
+        </div>
+
+        <!--Slide 7: Goto Failure f7 or s1-->
+        <div id="7" class="step slide" data-x="3000" data-y="3000">
+            <div class="slide-text">
+                <p>this is slide 7</p>
+
+                <!--Selection part-->
+                <p><a href="#f7">go to f7</a></p>
+                <p><a href="#s1">go to s1</a></p>
             </div>
             <div class="menu"><a href="#1">Start Over</a></div>
         </div>
 
 
+        <!--Failure Outcomes-->
+        <!--Failure 1-->
+        <div id="f1" class="step slide" data-x="-4500" data-y="-4500">
+            <div class="slide-text">
+                <p>This is failure 1</p>
 
+                <div class="menu"><a href="#1">Start Over</a></div>
+            </div>
+        </div>
 
+        <!--Failure 2-->
+        <div id="f2" class="step slide" data-x="-4500" data-y="-1500">
+            <div class="slide-text">
+                <p>This is failure 2</p>
+
+                <div class="menu"><a href="#1">Start Over</a></div>
+            </div>
+        </div>
+
+        <!--Failure 3-->
+        <div id="f3" class="step slide" data-x="-4500" data-y="1500">
+            <div class="slide-text">
+                <p>This is failure 3</p>
+
+                <div class="menu"><a href="#1">Start Over</a></div>
+            </div>
+        </div>
+
+        <!--Failure 4-->
+        <div id="f4" class="step slide" data-x="-4500" data-y="4500">
+            <div class="slide-text">
+                <p>This is failure 4</p>
+
+                <div class="menu"><a href="#1">Start Over</a></div>
+            </div>
+        </div>
+
+        <!--Failure 5-->
+        <div id="f5" class="step slide" data-x="4500" data-y="-4500">
+            <div class="slide-text">
+                <p>This is failure 5</p>
+
+                <div class="menu"><a href="#1">Start Over</a></div>
+            </div>
+        </div>
+
+        <!--Failure 6-->
+        <div id="f6" class="step slide" data-x="4500" data-y="-1500">
+            <div class="slide-text">
+                <p>This is failure 6</p>
+
+                <div class="menu"><a href="#1">Start Over</a></div>
+            </div>
+        </div>
+
+        <!--Failure 7-->
+        <div id="f7" class="step slide" data-x="4500" data-y="1500">
+            <div class="slide-text">
+                <p>This is failure 7</p>
+
+                <div class="menu"><a href="#1">Start Over</a></div>
+            </div>
+        </div>
+
+        <!--Success Outcomes-->
+        <!--Sucess-->
+        <div id="s1" class="step slide" data-x="4500" data-y="4500">
+            <div class="slide-text">
+                <p>This is sucess</p>
+
+                <div class="menu"><a href="#1">Start Over</a></div>
+            </div>
+        </div>
     </div>
 
     <!--JavaScript Section-->
