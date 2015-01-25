@@ -1,0 +1,213 @@
+﻿<!--
+    File name: A1_Dragon.html
+    Author: Yue Zhao
+    Last modified by: Yue Zhao
+    Program description: this is the main page
+    
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>The Legend of a Dragon</title>
+
+    <!--CSS Section-->
+    <link href="css/reset.css" rel="stylesheet" />
+    <link href="css/game.css" rel="stylesheet" />
+</head>
+<body onload="main();">
+
+    <div id="impress">
+        <!--Slide 1: Goto 2 or 3-->
+        <div id="1" class="step slide">
+            <div class="slide-text">
+                <h1 style="font-size:80px">The Legend of a dragon</h1>
+                <br />
+                <p>
+                    Once upon a time, there was a dragon living in a cave. People said he must have been guarding some treasure that  can make a person become the richest one all over the world. Then, hundreds thousands of people went to explore this cave and wanted to defeat this dragon and own the treasure. However, none of them returned until today.
+                    A young warrior is standing at the entrance of the cave...
+                </p>
+                <br />
+                <p>There are two branches in front of you. Which side are you going? </p>
+
+                <!--Selection part-->
+                <p><a href="#2">Left</a></p>    <!--Goto slide2-->
+                <p><a href="#3">Right</a></p>   <!--Goto slide3-->
+            </div>
+        </div>
+
+
+        <!--Slide 2: Goto 4 or 5-->
+        <div id="2" class="step slide" data-x="-1500">
+            <div class="slide-text">
+                <p>Suddenly, a big red dragon jumped out in front of you and is howling. </p>
+                <br />
+                <p>It is preparing to spray fire at you.</p>
+                <br />
+                <!--Selection part-->
+                <p><a href="#4">I am not afraid of you. I pulled out my sword. I am going to kill you.</a></p> <!--Goto slide4-->
+                <p><a href="#5">Well, I don't fight losing battle. It's time to go away.</a></p>               <!--Goto slide5-->
+            </div>
+            <div class="menu"><a href="#1">Start Over</a></div>
+        </div>
+
+        <!--Slide 3: Goto 6 or 7-->
+        <div id="3" class="step slide" data-x="1500">
+            <div class="slide-text">
+                <p>You saw a woman lying on the ground, serious wounded and dying.</p>
+                <br />
+                <!--Selection part-->
+                <p><a href="#6">Search her body and leave her alone...</a></p>                 <!--Goto slide6-->
+                <p><a href="#7">I have some medicine, which might be helpful for her.</a></p>  <!--Goto slide7-->
+            </div>
+            <div class="menu"><a href="#1">Start Over</a></div>
+        </div>
+
+        <!--Slide 4: Goto Failure f1 or f2-->
+        <div id="4" class="step slide" data-x="-3000" data-y="-3000">
+            <div class="slide-text">
+                <p>The battle is very intense. Suddenly, you found a flaw of this dragon.</p>
+                <br />
+                <!--Selection part-->
+                <p><a href="#f1">Beheading.</a></p>       <!--Goto failure1-->
+                <p><a href="#f2">Stab its heart.</a></p>  <!--Goto failure2-->
+            </div>
+            <div class="menu"><a href="#1">Start Over</a></div>
+        </div>
+
+        <!--Slide 5: Goto Failure f3 or f4-->
+        <div id="5" class="step slide" data-x="-3000" data-y="3000">
+            <div class="slide-text">
+                <p>You decided to flee away. You have two options now.</p>
+                <br />
+                <!--Selection part-->
+                <p><a href="#f3">Return following the way you came.</a></p>                            <!--Goto failure3-->
+                <p><a href="#f4">Run towards the hole behind the dragon when it is spraying.</a></p>   <!--Goto failure4-->
+            </div>
+            <div class="menu"><a href="#1">Start Over</a></div>
+        </div>
+
+        <!--Slide 6: Goto Failure f5 or f6-->
+        <div id="6" class="step slide" data-x="3000" data-y="-3000">
+            <div class="slide-text">
+                <p>You searched her body and found something - long live medicine and priceless jewelry</p>
+                <br />
+
+                <!--Selection part-->
+                <p><a href="#f5">You picked up the jewelry first, but the medicine disappeared.</a></p>    <!--Goto failure5-->
+                <p><a href="#f6">You picked up the medicine first, but the jewelry disappeared.</a></p>   <!--Goto failure6-->
+            </div>
+            <div class="menu"><a href="#1">Start Over</a></div>
+        </div>
+
+        <!--Slide 7: Goto Failure f7 or s1-->
+        <div id="7" class="step slide" data-x="3000" data-y="3000">
+            <div class="slide-text">
+                <p>You saved this woman, and she wake up.</p>
+                <p>"Young man, you saved me. Please take over my gift. What do you want?"</p>
+                <!--Selection part-->
+                <p><a href="#f7">Treasure. I want to be the richest person all over the world.</a></p>     <!--Goto failure7-->
+                <p><a href="#s1">Nothing. Your blessing is enough.</a></p>                                 <!--Goto success-->
+            </div>
+            <div class="menu"><a href="#1">Start Over</a></div>
+        </div>
+
+
+        <!--Failure Outcomes---------------------------------------------------->
+        <!--Failure 1-->
+        <div id="f1" class="step slide" data-x="-4500" data-y="-4500">
+            <div class="slide-text">
+                <p>The dragon dodged your attack. Then, you were hit by its tail severely.</p>
+                <br />
+                <p>Unfortunately, you died!</p>
+                <div class="menu"><a href="#1">Start Over</a></div>
+            </div>
+        </div>
+
+        <!--Failure 2-->
+        <div id="f2" class="step slide" data-x="-4500" data-y="-1500">
+            <div class="slide-text">
+                <p>Your sword couldn't stab through its skin. Then, you were hit by its tail severely.</p>
+                <br />
+                <p>Unfortunately, you died!</p>
+                <div class="menu"><a href="#1">Start Over</a></div>
+            </div>
+        </div>
+
+        <!--Failure 3-->
+        <div id="f3" class="step slide" data-x="-4500" data-y="1500">
+            <div class="slide-text">
+                <p>You couldn't make it. You were burned by the dragon's fire.</p>
+                <br />
+                <p>Unfortunately, you died!</p>
+                <div class="menu"><a href="#1">Start Over</a></div>
+            </div>
+        </div>
+
+        <!--Failure 4-->
+        <div id="f4" class="step slide" data-x="-4500" data-y="4500">
+            <div class="slide-text">
+                <p>You dodged the dragon's fire and ran into that hole.</p>
+                <br />
+                <p>Unfortunately, this is a dead end.</p>
+                <br />You were killed by the dragon.
+                <br />
+                <div class="menu"><a href="#1">Start Over</a></div>
+            </div>
+        </div>
+
+        <!--Failure 5-->
+        <div id="f5" class="step slide" data-x="4500" data-y="-4500">
+            <div class="slide-text">
+                <p>Suddenly, the wounded woman transformed to a dragon and yelled at you</p>
+                <p>"Ruthless and greedy human, go to hell!"</p>
+                <br />You were killed by the dragon.
+                <br />
+                <div class="menu"><a href="#1">Start Over</a></div>
+            </div>
+        </div>
+
+        <!--Failure 6-->
+        <div id="f6" class="step slide" data-x="4500" data-y="-1500">
+            <div class="slide-text">
+                <p>Suddenly, the wounded woman transformed to a dragon and yelled at you</p>
+                <p>"Ruthless and greedy human, go to hell!"</p>
+                <br />You were killed by the dragon.
+                <br />
+                <div class="menu"><a href="#1">Start Over</a></div>
+            </div>
+        </div>
+
+        <!--Failure 7-->
+        <div id="f7" class="step slide" data-x="4500" data-y="1500">
+            <div class="slide-text">
+                <p>Suddenly, the wounded woman transformed to a dragon.</p>
+                <p>"Silly and greedy human, go to hell!"</p>
+                <br />You were killed by the dragon.
+                <br />
+                <div class="menu"><a href="#1">Start Over</a></div>
+            </div>
+        </div>
+
+        <!--Success Outcomes-->
+        <!--Sucess-->
+        <div id="s1" class="step slide" data-x="4500" data-y="4500">
+            <div class="slide-text">
+                <p>Suddenly, the wounded woman transformed to a dragon.</p>
+                <p>"What a kind hero! I bless you."</p>
+                <br />You got the dragon's blessing and returned home intact.
+                <br />Since then, you live happily forever.
+
+                <div class="menu"><a href="#1">Start Over</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!--JavaScript Section-->
+    <script src="scripts/libs/impress.js"></script>
+    <script src="scripts/libs/game.js"></script>
+</body>
+</html>

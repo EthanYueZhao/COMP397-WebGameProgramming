@@ -60,6 +60,8 @@
     <Content Include="css\game.css" />
     <Content Include="css\impress-demo.css" />
     <Content Include="css\reset.css" />
+    <Content Include="A1_Dragon.html" />
+    <Content Include="error.html" />
     <Content Include="index.html" />
     <Content Include="scripts\libs\game.js" />
     <Content Include="scripts\libs\impress.js" />
