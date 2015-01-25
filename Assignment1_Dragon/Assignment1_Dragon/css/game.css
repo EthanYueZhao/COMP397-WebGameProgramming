@@ -1,4 +1,12 @@
-﻿body {
+﻿/*
+    File name: game.css
+    Author: Yue Zhao
+    Last modified by: Yue Zhao
+    Program description: this is the css file of the main page
+
+*/
+
+body {
     font-family: 'PT Sans', sans-serif;
     min-height: 740px;
 
