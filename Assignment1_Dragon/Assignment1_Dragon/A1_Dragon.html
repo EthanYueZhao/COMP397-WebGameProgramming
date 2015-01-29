@@ -18,7 +18,7 @@
     <link href="css/reset.css" rel="stylesheet" />
     <link href="css/game.css" rel="stylesheet" />
 </head>
-<body onload="main();">
+<body onload="main();" >
 
     <div id="impress">
         <!--Slide 1: Goto 2 or 3-->
@@ -35,6 +35,7 @@
 
                 <!--Selection part-->
                 <p><a href="#2">Left</a></p>    <!--Goto slide2-->
+                or
                 <p><a href="#3">Right</a></p>   <!--Goto slide3-->
             </div>
         </div>
@@ -118,7 +119,7 @@
 
         <!--Failure Outcomes---------------------------------------------------->
         <!--Failure 1-->
-        <div id="f1" class="step slide" data-x="-4500" data-y="-4500">
+        <div id="f1" class="step slide-failure" data-x="-4500" data-y="-4500">
             <div class="slide-text">
                 <p>The dragon dodged your attack. Then, you were hit by its tail severely.</p>
                 <br />
@@ -128,7 +129,7 @@
         </div>
 
         <!--Failure 2-->
-        <div id="f2" class="step slide" data-x="-4500" data-y="-1500">
+        <div id="f2" class="step slide-failure" data-x="-4500" data-y="-1500">
             <div class="slide-text">
                 <p>Your sword couldn't stab through its skin. Then, you were hit by its tail severely.</p>
                 <br />
@@ -138,7 +139,7 @@
         </div>
 
         <!--Failure 3-->
-        <div id="f3" class="step slide" data-x="-4500" data-y="1500">
+        <div id="f3" class="step slide-failure" data-x="-4500" data-y="1500">
             <div class="slide-text">
                 <p>You couldn't make it. You were burned by the dragon's fire.</p>
                 <br />
@@ -148,7 +149,7 @@
         </div>
 
         <!--Failure 4-->
-        <div id="f4" class="step slide" data-x="-4500" data-y="4500">
+        <div id="f4" class="step slide-failure" data-x="-4500" data-y="4500">
             <div class="slide-text">
                 <p>You dodged the dragon's fire and ran into that hole.</p>
                 <br />
@@ -160,7 +161,7 @@
         </div>
 
         <!--Failure 5-->
-        <div id="f5" class="step slide" data-x="4500" data-y="-4500">
+        <div id="f5" class="step slide-failure" data-x="4500" data-y="-4500">
             <div class="slide-text">
                 <p>Suddenly, the wounded woman transformed to a dragon and yelled at you</p>
                 <p>"Ruthless and greedy human, go to hell!"</p>
@@ -171,7 +172,7 @@
         </div>
 
         <!--Failure 6-->
-        <div id="f6" class="step slide" data-x="4500" data-y="-1500">
+        <div id="f6" class="step slide-failure" data-x="4500" data-y="-1500">
             <div class="slide-text">
                 <p>Suddenly, the wounded woman transformed to a dragon and yelled at you</p>
                 <p>"Ruthless and greedy human, go to hell!"</p>
@@ -182,7 +183,7 @@
         </div>
 
         <!--Failure 7-->
-        <div id="f7" class="step slide" data-x="4500" data-y="1500">
+        <div id="f7" class="step slide-failure" data-x="4500" data-y="1500">
             <div class="slide-text">
                 <p>Suddenly, the wounded woman transformed to a dragon.</p>
                 <p>"Silly and greedy human, go to hell!"</p>
@@ -194,7 +195,7 @@
 
         <!--Success Outcomes-->
         <!--Sucess-->
-        <div id="s1" class="step slide" data-x="4500" data-y="4500">
+        <div id="s1" class="step slide-success" data-x="4500" data-y="4500">
             <div class="slide-text">
                 <p>Suddenly, the wounded woman transformed to a dragon.</p>
                 <p>"What a kind hero! I bless you."</p>
