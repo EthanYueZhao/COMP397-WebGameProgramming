@@ -33,7 +33,7 @@ function spinButtonOver() {
     spinButton.alpha = 0.7;
 }
 function createUI() {
-    background = new createjs.Bitmap("assets/images/background.png");
+    background = new createjs.Bitmap("assets/images/slotMachine3.png");
     game.addChild(background); // Add the background to the game container
     // Spin Button
     spinButton = new createjs.Bitmap("assets/images/spinButton.png");

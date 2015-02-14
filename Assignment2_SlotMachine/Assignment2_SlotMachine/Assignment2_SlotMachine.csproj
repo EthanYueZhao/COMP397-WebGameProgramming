@@ -66,6 +66,7 @@
     <Content Include="assets\images\labelBox.png" />
     <Content Include="assets\images\powerButton.png" />
     <Content Include="assets\images\resetButton.png" />
+    <Content Include="assets\images\slotMachine3.png" />
     <Content Include="assets\images\spinButton.png" />
     <Content Include="css\game.css" />
     <Content Include="index.html" />
