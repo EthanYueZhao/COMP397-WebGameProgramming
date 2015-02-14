@@ -36,34 +36,34 @@ function createUI() {
     background = new createjs.Bitmap("assets/images/slotMachine3.png");
     game.addChild(background); // Add the background to the game container
     // Spin Button
-    spinButton = new createjs.Bitmap("assets/images/spinButton.png");
+    spinButton = new createjs.Bitmap("assets/images/btn_Spin.png");
     game.addChild(spinButton);
-    spinButton.x = 410;
-    spinButton.y = 545;
+    spinButton.x = 310;
+    spinButton.y = 325;
     // Spin Button Event Listeners
     spinButton.addEventListener("click", spinButtonClicked);
     spinButton.addEventListener("mouseover", spinButtonOver);
     spinButton.addEventListener("mouseout", spinButtonOut);
     // Bet Max Button
-    betMaxButton = new createjs.Bitmap("assets/images/betMaxButton.png");
+    betMaxButton = new createjs.Bitmap("assets/images/btn_BetMax.png");
     game.addChild(betMaxButton);
-    betMaxButton.x = 325;
-    betMaxButton.y = 560;
+    betMaxButton.x = 155;
+    betMaxButton.y = 345;
     // Bet One Button
-    betOneButton = new createjs.Bitmap("assets/images/betOneButton.png");
+    betOneButton = new createjs.Bitmap("assets/images/btn_BetOne.png");
     game.addChild(betOneButton);
-    betOneButton.x = 235;
-    betOneButton.y = 560;
+    betOneButton.x = 80;
+    betOneButton.y = 345;
     // Reset Button
-    resetButton = new createjs.Bitmap("assets/images/resetButton.png");
+    resetButton = new createjs.Bitmap("assets/images/btn_Reset.png");
     game.addChild(resetButton);
-    resetButton.x = 150;
-    resetButton.y = 560;
+    resetButton.x = 230;
+    resetButton.y = 345;
     // Power Button
-    powerButton = new createjs.Bitmap("assets/images/powerButton.png");
+    powerButton = new createjs.Bitmap("assets/images/btn_Power.png");
     game.addChild(powerButton);
-    powerButton.x = 55;
-    powerButton.y = 560;
+    powerButton.x = 12;
+    powerButton.y = 345;
 }
 function main() {
     game = new createjs.Container(); // Instantiates the Game Container

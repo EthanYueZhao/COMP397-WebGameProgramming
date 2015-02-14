@@ -59,15 +59,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\images\background.png" />
-    <Content Include="assets\images\betMaxButton.png" />
-    <Content Include="assets\images\betOneButton.png" />
-    <Content Include="assets\images\button.png" />
+    <Content Include="assets\images\btn_BetMax.png" />
+    <Content Include="assets\images\btn_BetOne.png" />
+    <Content Include="assets\images\btn_Power.png" />
+    <Content Include="assets\images\btn_Reset.png" />
+    <Content Include="assets\images\btn_Spin.png" />
     <Content Include="assets\images\labelBox.png" />
-    <Content Include="assets\images\powerButton.png" />
-    <Content Include="assets\images\resetButton.png" />
     <Content Include="assets\images\slotMachine3.png" />
-    <Content Include="assets\images\spinButton.png" />
     <Content Include="css\game.css" />
     <Content Include="index.html" />
     <Content Include="Scripts\game.js" />
@@ -81,7 +79,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\images\Thumbs.db" />
     <Content Include="Scripts\game.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
