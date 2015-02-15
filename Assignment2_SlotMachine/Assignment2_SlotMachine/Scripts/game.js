@@ -38,6 +38,8 @@ function spinButtonOver() {
 // betMaxButton event listeners
 function betMaxButtonClicked() {
     console.log("Bet Max Button Clicked");
+    playerBet = playerMoney;
+    showPlayerStats();
 }
 function betMaxButtonOut() {
     betMaxButton.alpha = 1; // 100% Alpha 
@@ -48,6 +50,8 @@ function betMaxButtonOver() {
 // betOneButton event listeners
 function betOneButtonClicked() {
     console.log("Bet One Button Clicked");
+    playerBet += 10;
+    showPlayerStats();
 }
 function betOneButtonOut() {
     betOneButton.alpha = 1; // 100% Alpha 
@@ -159,7 +163,6 @@ var txt_credits;
 var txt_playerBet;
 var txt_payout;
 function initText() {
-    resetAll();
     txt_jackpot = new createjs.Text(jackpot.toString(), "20px Arial", "#ffffff");
     txt_jackpot.x = 180;
     txt_jackpot.y = 20;
@@ -170,7 +173,7 @@ function initText() {
     txt_playerBet.x = 175;
     txt_playerBet.y = 65;
     txt_payout = new createjs.Text(winnings.toString(), "20px Arial", "#ffffff");
-    txt_payout.x = 275;
+    txt_payout.x = 278;
     txt_payout.y = 65;
     stage.addChild(txt_jackpot);
     stage.addChild(txt_credits);
@@ -206,7 +209,7 @@ function resetAll() {
     winnings = 0;
     jackpot = 5000;
     turn = 0;
-    playerBet = 0;
+    playerBet = 10;
     winNumber = 0;
     lossNumber = 0;
     winRatio = 0;
@@ -349,7 +352,7 @@ function determineWinnings() {
 }
 /* When the player clicks the spin button the game kicks off */
 function spin() {
-    playerBet = 10;
+    winnings = 0;
     if (playerMoney == 0) {
         if (confirm("You ran out of Money! \nDo you want to play again?")) {
             resetAll();
@@ -367,6 +370,7 @@ function spin() {
         fruits = spinResult[0] + " - " + spinResult[1] + " - " + spinResult[2];
         //$("div#result>p").text(fruits);
         determineWinnings();
+        txt_payout.text = winnings.toString();
         turn++;
         showPlayerStats();
     }
