@@ -69,6 +69,7 @@
     <Content Include="css\game.css" />
     <Content Include="index.html" />
     <Content Include="Scripts\game.js" />
+    <Content Include="Scripts\lib\createjs-2014.12.12.combined.js" />
     <Content Include="Scripts\lib\easeljs-0.8.0.min.js" />
     <Content Include="Scripts\lib\preloadjs-0.6.0.min.js" />
     <Content Include="Scripts\lib\soundjs-0.6.0.min.js" />
@@ -80,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\game.js.map" />
+    <Content Include="buttons.xlsx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
