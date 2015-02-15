@@ -105,6 +105,7 @@ function resetButtonOver() {
 // powerButton event listeners
 function powerButtonClicked() {
     console.log("Power Button Clicked");
+    alert("Thank you for playing this game.");
 }
 
 function powerButtonOut() {
