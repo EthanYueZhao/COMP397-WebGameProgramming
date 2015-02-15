@@ -86,6 +86,8 @@ function betOneButtonOver() {
 // resetButton event listeners
 function resetButtonClicked() {
     console.log("Reset Button Clicked");
+    resetAll();
+    showPlayerStats();
 }
 
 function resetButtonOut() {
