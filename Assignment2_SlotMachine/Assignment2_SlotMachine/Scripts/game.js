@@ -64,6 +64,7 @@ function resetButtonClicked() {
     console.log("Reset Button Clicked");
     resetAll();
     showPlayerStats();
+    showResult();
 }
 function resetButtonOut() {
     resetButton.alpha = 1; // 100% Alpha 
@@ -139,6 +140,7 @@ function main() {
     stage.addChild(game); // adds the Game Container to the Stage
     resetAll();
     initText(); // add text to the stage
+    showResult(); // init reel images
 }
 // start of game logic part+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 var playerMoney;
@@ -150,7 +152,7 @@ var winNumber;
 var lossNumber;
 var winRatio;
 var spinResult;
-var fruits = "";
+var fruits;
 var grapes;
 var bananas;
 var oranges;
@@ -176,10 +178,10 @@ function initText() {
     txt_payout = new createjs.Text(winnings.toString(), "20px Arial", "#ffffff");
     txt_payout.x = 278;
     txt_payout.y = 65;
-    stage.addChild(txt_jackpot);
-    stage.addChild(txt_credits);
-    stage.addChild(txt_playerBet);
-    stage.addChild(txt_payout);
+    game.addChild(txt_jackpot);
+    game.addChild(txt_credits);
+    game.addChild(txt_playerBet);
+    game.addChild(txt_payout);
 }
 /* Utility function to show Player Stats */
 function showPlayerStats() {
@@ -257,7 +259,7 @@ function Reels() {
         outCome[spin] = Math.floor((Math.random() * 65) + 1);
         switch (outCome[spin]) {
             case checkRange(outCome[spin], 1, 27):
-                betLine[spin] = "blank";
+                betLine[spin] = "Blank";
                 blanks++;
                 break;
             case checkRange(outCome[spin], 28, 37):
@@ -367,8 +369,7 @@ function spin() {
         alert("All bets must be a positive $ amount.");
     }
     else if (playerBet <= playerMoney) {
-        spinResult = Reels();
-        fruits = spinResult[0] + " - " + spinResult[1] + " - " + spinResult[2];
+        showResult();
         //$("div#result>p").text(fruits);
         determineWinnings();
         txt_payout.text = winnings.toString();
@@ -378,6 +379,28 @@ function spin() {
     else {
         alert("Please enter a valid bet amount");
     }
+}
+var reel0;
+var reel1;
+var reel2;
+function showResult() {
+    spinResult = Reels();
+    fruits = spinResult[0] + " - " + spinResult[1] + " - " + spinResult[2];
+    // add image to reel0
+    reel0 = new createjs.Bitmap("assets/images/symbols/" + spinResult[0] + ".png");
+    game.addChild(reel0);
+    reel0.x = 71;
+    reel0.y = 147;
+    // add image to reel1
+    reel1 = new createjs.Bitmap("assets/images/symbols/" + spinResult[1] + ".png");
+    game.addChild(reel1);
+    reel1.x = 171;
+    reel1.y = 147;
+    // add image to reel2
+    reel2 = new createjs.Bitmap("assets/images/symbols/" + spinResult[2] + ".png");
+    game.addChild(reel2);
+    reel2.x = 271;
+    reel2.y = 147;
 }
 // end of game logic part+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 //# sourceMappingURL=game.js.map
