@@ -1,57 +1,9 @@
-﻿// this is the game controller
+﻿/// <reference path="constants/constants.ts" />
+/// <reference path="objects/button.ts" />
+
+// this is the game controller
 // author: Yue Zhao
 // last edited time: 2015-2-25
-
-class Button {
-    private _image: createjs.Bitmap;
-    private _x: number;
-    private _y: number;
-
-    constructor(path: string, x: number, y: number) {
-        this._x = x;
-        this._y = y;
-        this._image = new createjs.Bitmap(path);
-        this._image.x = this._x;
-        this._image.y = this._y;
-
-        this._image.addEventListener("mouseover", this._buttonOver);
-        this._image.addEventListener("mouseout", this._buttonOut);
-    }
-
-    // PUBLIC PROPERTIES
-    public setX(x: number): void {
-        this._x = x;
-    }
-
-    public getX(): number {
-        return this._x;
-    }
-
-    public setY(y: number): void {
-        this._y = y;
-    }
-
-    public getY(): number {
-        return this._y;
-    }
-
-    public getImage(): createjs.Bitmap {
-        return this._image;
-    }
-
-
-    // PRIVATE EVENT HANDLERS
-    private _buttonOut(event: createjs.MouseEvent): void {
-        event.currentTarget.alpha = 1; // 100% Alpha 
-    }
-
-    private _buttonOver(event: createjs.MouseEvent): void {
-        event.currentTarget.alpha = 0.5;
-    }
-}
-
-
-
 
 // viriables ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 var canvas; // reference to the HTML 5 Canvas element
@@ -62,11 +14,11 @@ var reelContainers: createjs.Container[] = [];
 // game objects
 var game: createjs.Container; // main Game Container Object
 var background: createjs.Bitmap;
-var spinButton: Button;
-var betMaxButton: Button;
-var betOneButton: Button;
-var resetButton: Button;
-var powerButton: Button;
+var spinButton: objects.Button;
+var betMaxButton: objects.Button;
+var betOneButton: objects.Button;
+var resetButton: objects.Button;
+var powerButton: objects.Button;
 
 var txt_jackpot: createjs.Text;
 var txt_credits: createjs.Text;
@@ -138,7 +90,7 @@ function createUI() {
     game.addChild(background); // add the background to the game container
 
     // add tile containers
-    for (var index = 0; index < NUM_REELS; index++) {
+    for (var index = 0; index < constants.NUM_REELS; index++) {
         reelContainers[index] = new createjs.Container();
         reelContainers[index].x = 71 + 100 * index;
         reelContainers[index].y = 147;
@@ -147,14 +99,14 @@ function createUI() {
 
 
     // spin Button
-    spinButton = new Button("assets/images/btn_Spin.png", 310, 325);
+    spinButton = new objects.Button("assets/images/btn_Spin.png", 310, 325);
     game.addChild(spinButton.getImage());
 
     // spin Button Event Listeners
     spinButton.getImage().addEventListener("click", spinButtonClicked);
 
     // bet Max Button
-    betMaxButton = new Button("assets/images/btn_BetMax.png", 155, 345);
+    betMaxButton = new objects.Button("assets/images/btn_BetMax.png", 155, 345);
     game.addChild(betMaxButton.getImage());
 
     // bet Max Event Listeners
@@ -162,21 +114,21 @@ function createUI() {
 
 
     // bet One Button
-    betOneButton = new Button("assets/images/btn_BetOne.png", 80, 345);
+    betOneButton = new objects.Button("assets/images/btn_BetOne.png", 80, 345);
     game.addChild(betOneButton.getImage());
 
     // bet One Event Listeners
     betOneButton.getImage().addEventListener("click", betOneButtonClicked);
 
     // reset Button
-    resetButton = new Button("assets/images/btn_Reset.png", 230, 345);
+    resetButton = new objects.Button("assets/images/btn_Reset.png", 230, 345);
     game.addChild(resetButton.getImage());
 
     // reset button Event Listeners
     resetButton.getImage().addEventListener("click", resetButtonClicked);
 
     // power Button
-    powerButton = new Button("assets/images/btn_Power.png", 12, 345);
+    powerButton = new objects.Button("assets/images/btn_Power.png", 12, 345);
     game.addChild(powerButton.getImage());
 
     // power button Event Listeners
@@ -208,7 +160,7 @@ var playerBet: number;
 var winNumber: number;
 var lossNumber: number;
 var winRatio: number;
-var NUM_REELS: number = 3;
+
 
 var spinResult;
 var fruits: string;
@@ -253,10 +205,6 @@ function showPlayerStats() {
     txt_credits.text = playerMoney.toString();
     txt_playerBet.text = playerBet.toString();
     txt_payout.text = winnings.toString();
-    //$("#playerTurn").text("Turn: " + turn);
-    //$("#playerWins").text("Wins: " + winNumber);
-    //$("#playerLosses").text("Losses: " + lossNumber);
-    //$("#playerWinRatio").text("Win Ratio: " + (winRatio * 100).toFixed(2) + "%");
 }
 
 /* Utility function to reset all fruit tallies */
@@ -273,11 +221,11 @@ function resetFruitTally() {
 
 /* Utility function to reset the player stats */
 function resetAll() {
-    playerMoney = 1000;
+    playerMoney = constants.STARTING_MONEY;
     winnings = 0;
-    jackpot = 5000;
+    jackpot = constants.JACKPOT;
     turn = 0;
-    playerBet = 10;
+    playerBet =constants.STARTING_BET;
     winNumber = 0;
     lossNumber = 0;
     winRatio = 0;
@@ -299,7 +247,7 @@ function checkJackPot() {
 /* Utility function to show a win message and increase player money */
 function showWinMessage() {
     playerMoney += winnings;
-    //$("div#winOrLose>p").text("You Won: $" + winnings);
+   
     resetFruitTally();
     checkJackPot();
 }
@@ -307,7 +255,7 @@ function showWinMessage() {
 /* Utility function to show a loss message and reduce player money */
 function showLossMessage() {
     playerMoney -= playerBet;
-    //$("div#winOrLose>p").text("You Lost!");
+    
     resetFruitTally();
 }
 
@@ -446,7 +394,7 @@ function spin() {
     }
     else if (playerBet <= playerMoney) {
         showResult();
-        //$("div#result>p").text(fruits);
+       
         determineWinnings();
         txt_payout.text = winnings.toString();
         turn++;
@@ -461,7 +409,7 @@ function showResult() {
     spinResult = Reels();
     fruits = spinResult[0] + " - " + spinResult[1] + " - " + spinResult[2];
 
-    for (var index = 0; index < NUM_REELS; index++) {
+    for (var index = 0; index < constants.NUM_REELS; index++) {
         reelContainers[index].removeAllChildren();
         tiles[index] = new createjs.Bitmap("assets/images/symbols/" + spinResult[index] + ".png");
         reelContainers[index].addChild(tiles[index]);

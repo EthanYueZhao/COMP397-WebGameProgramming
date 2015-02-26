@@ -1,41 +1,8 @@
+/// <reference path="constants/constants.ts" />
+/// <reference path="objects/button.ts" />
 // this is the game controller
 // author: Yue Zhao
 // last edited time: 2015-2-25
-var Button = (function () {
-    function Button(path, x, y) {
-        this._x = x;
-        this._y = y;
-        this._image = new createjs.Bitmap(path);
-        this._image.x = this._x;
-        this._image.y = this._y;
-        this._image.addEventListener("mouseover", this._buttonOver);
-        this._image.addEventListener("mouseout", this._buttonOut);
-    }
-    // PUBLIC PROPERTIES
-    Button.prototype.setX = function (x) {
-        this._x = x;
-    };
-    Button.prototype.getX = function () {
-        return this._x;
-    };
-    Button.prototype.setY = function (y) {
-        this._y = y;
-    };
-    Button.prototype.getY = function () {
-        return this._y;
-    };
-    Button.prototype.getImage = function () {
-        return this._image;
-    };
-    // PRIVATE EVENT HANDLERS
-    Button.prototype._buttonOut = function (event) {
-        event.currentTarget.alpha = 1; // 100% Alpha 
-    };
-    Button.prototype._buttonOver = function (event) {
-        event.currentTarget.alpha = 0.5;
-    };
-    return Button;
-})();
 // viriables ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 var canvas; // reference to the HTML 5 Canvas element
 var stage; // reference to the Stage
@@ -101,34 +68,34 @@ function powerButtonClicked() {
 function createUI() {
     background = new createjs.Bitmap("assets/images/slotMachine3.png");
     game.addChild(background); // add the background to the game container
-    for (var index = 0; index < NUM_REELS; index++) {
+    for (var index = 0; index < constants.NUM_REELS; index++) {
         reelContainers[index] = new createjs.Container();
         reelContainers[index].x = 71 + 100 * index;
         reelContainers[index].y = 147;
         game.addChild(reelContainers[index]);
     }
     // spin Button
-    spinButton = new Button("assets/images/btn_Spin.png", 310, 325);
+    spinButton = new objects.Button("assets/images/btn_Spin.png", 310, 325);
     game.addChild(spinButton.getImage());
     // spin Button Event Listeners
     spinButton.getImage().addEventListener("click", spinButtonClicked);
     // bet Max Button
-    betMaxButton = new Button("assets/images/btn_BetMax.png", 155, 345);
+    betMaxButton = new objects.Button("assets/images/btn_BetMax.png", 155, 345);
     game.addChild(betMaxButton.getImage());
     // bet Max Event Listeners
     betMaxButton.getImage().addEventListener("click", betMaxButtonClicked);
     // bet One Button
-    betOneButton = new Button("assets/images/btn_BetOne.png", 80, 345);
+    betOneButton = new objects.Button("assets/images/btn_BetOne.png", 80, 345);
     game.addChild(betOneButton.getImage());
     // bet One Event Listeners
     betOneButton.getImage().addEventListener("click", betOneButtonClicked);
     // reset Button
-    resetButton = new Button("assets/images/btn_Reset.png", 230, 345);
+    resetButton = new objects.Button("assets/images/btn_Reset.png", 230, 345);
     game.addChild(resetButton.getImage());
     // reset button Event Listeners
     resetButton.getImage().addEventListener("click", resetButtonClicked);
     // power Button
-    powerButton = new Button("assets/images/btn_Power.png", 12, 345);
+    powerButton = new objects.Button("assets/images/btn_Power.png", 12, 345);
     game.addChild(powerButton.getImage());
     // power button Event Listeners
     powerButton.getImage().addEventListener("click", powerButtonClicked);
@@ -150,7 +117,6 @@ var playerBet;
 var winNumber;
 var lossNumber;
 var winRatio;
-var NUM_REELS = 3;
 var spinResult;
 var fruits;
 var grapes;
@@ -186,10 +152,6 @@ function showPlayerStats() {
     txt_credits.text = playerMoney.toString();
     txt_playerBet.text = playerBet.toString();
     txt_payout.text = winnings.toString();
-    //$("#playerTurn").text("Turn: " + turn);
-    //$("#playerWins").text("Wins: " + winNumber);
-    //$("#playerLosses").text("Losses: " + lossNumber);
-    //$("#playerWinRatio").text("Win Ratio: " + (winRatio * 100).toFixed(2) + "%");
 }
 /* Utility function to reset all fruit tallies */
 function resetFruitTally() {
@@ -204,11 +166,11 @@ function resetFruitTally() {
 }
 /* Utility function to reset the player stats */
 function resetAll() {
-    playerMoney = 1000;
+    playerMoney = constants.STARTING_MONEY;
     winnings = 0;
-    jackpot = 5000;
+    jackpot = constants.JACKPOT;
     turn = 0;
-    playerBet = 10;
+    playerBet = constants.STARTING_BET;
     winNumber = 0;
     lossNumber = 0;
     winRatio = 0;
@@ -227,14 +189,12 @@ function checkJackPot() {
 /* Utility function to show a win message and increase player money */
 function showWinMessage() {
     playerMoney += winnings;
-    //$("div#winOrLose>p").text("You Won: $" + winnings);
     resetFruitTally();
     checkJackPot();
 }
 /* Utility function to show a loss message and reduce player money */
 function showLossMessage() {
     playerMoney -= playerBet;
-    //$("div#winOrLose>p").text("You Lost!");
     resetFruitTally();
 }
 /* Utility function to check if a value falls within a range of bounds */
@@ -366,7 +326,6 @@ function spin() {
     }
     else if (playerBet <= playerMoney) {
         showResult();
-        //$("div#result>p").text(fruits);
         determineWinnings();
         txt_payout.text = winnings.toString();
         turn++;
@@ -379,7 +338,7 @@ function spin() {
 function showResult() {
     spinResult = Reels();
     fruits = spinResult[0] + " - " + spinResult[1] + " - " + spinResult[2];
-    for (var index = 0; index < NUM_REELS; index++) {
+    for (var index = 0; index < constants.NUM_REELS; index++) {
         reelContainers[index].removeAllChildren();
         tiles[index] = new createjs.Bitmap("assets/images/symbols/" + spinResult[index] + ".png");
         reelContainers[index].addChild(tiles[index]);
