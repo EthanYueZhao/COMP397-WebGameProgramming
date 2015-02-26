@@ -75,21 +75,19 @@
     <Content Include="assets\images\symbols\Grapes.png" />
     <Content Include="assets\images\symbols\Orange.png" />
     <Content Include="assets\images\symbols\Seven.png" />
-    <Content Include="css\game.css" />
-    <Content Include="index.html" />
-    <Content Include="Scripts\game.js" />
-    <Content Include="Scripts\lib\createjs-2014.12.12.combined.js" />
-    <Content Include="Scripts\lib\easeljs-0.8.0.min.js" />
-    <Content Include="Scripts\lib\preloadjs-0.6.0.min.js" />
-    <Content Include="Scripts\lib\soundjs-0.6.0.min.js" />
-    <Content Include="Scripts\lib\tweenjs-0.6.0.min.js" />
+    <Content Include="css\A2_game.css" />
+    <Content Include="A2_slot machine.html" />
+    <Content Include="scripts\lib\createjs-2014.12.12.combined.js" />
+    <Content Include="scripts\lib\easeljs-0.8.0.min.js" />
+    <Content Include="scripts\lib\preloadjs-0.6.0.min.js" />
+    <Content Include="scripts\lib\soundjs-0.6.0.min.js" />
+    <Content Include="scripts\lib\tweenjs-0.6.0.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Scripts\game.js.map" />
     <Content Include="buttons.xlsx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -99,14 +97,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Scripts\constants\constants.ts" />
-    <TypeScriptCompile Include="Scripts\game.ts" />
-    <TypeScriptCompile Include="Scripts\lib\createjs-lib.d.ts" />
-    <TypeScriptCompile Include="Scripts\lib\easeljs.d.ts" />
-    <TypeScriptCompile Include="Scripts\lib\preloadjs.d.ts" />
-    <TypeScriptCompile Include="Scripts\lib\soundjs.d.ts" />
-    <TypeScriptCompile Include="Scripts\lib\tweenjs.d.ts" />
-    <TypeScriptCompile Include="Scripts\objects\button.ts" />
+    <TypeScriptCompile Include="scripts\constants\A2_constants.ts" />
+    <TypeScriptCompile Include="scripts\A2_game.ts" />
+    <TypeScriptCompile Include="scripts\lib\createjs-lib.d.ts" />
+    <TypeScriptCompile Include="scripts\lib\easeljs.d.ts" />
+    <TypeScriptCompile Include="scripts\lib\preloadjs.d.ts" />
+    <TypeScriptCompile Include="scripts\lib\soundjs.d.ts" />
+    <TypeScriptCompile Include="scripts\lib\tweenjs.d.ts" />
+    <TypeScriptCompile Include="scripts\objects\A2_button.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

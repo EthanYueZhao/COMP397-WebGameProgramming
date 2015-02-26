@@ -1,5 +1,5 @@
-/// <reference path="constants/constants.ts" />
-/// <reference path="objects/button.ts" />
+/// <reference path="constants/a2_constants.ts" />
+/// <reference path="objects/a2_button.ts" />
 // this is the game controller
 // author: Yue Zhao
 // last edited time: 2015-2-25
@@ -345,4 +345,4 @@ function showResult() {
     }
 }
 // end of game logic part+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-//# sourceMappingURL=game.js.map
+//# sourceMappingURL=A2_game.js.map

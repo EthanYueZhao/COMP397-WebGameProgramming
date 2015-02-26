@@ -1,5 +1,5 @@
-﻿/// <reference path="constants/constants.ts" />
-/// <reference path="objects/button.ts" />
+﻿/// <reference path="constants/a2_constants.ts" />
+/// <reference path="objects/a2_button.ts" />
 
 // this is the game controller
 // author: Yue Zhao
@@ -24,7 +24,6 @@ var txt_jackpot: createjs.Text;
 var txt_credits: createjs.Text;
 var txt_playerBet: createjs.Text;
 var txt_payout: createjs.Text;
-
 
 // functions ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
