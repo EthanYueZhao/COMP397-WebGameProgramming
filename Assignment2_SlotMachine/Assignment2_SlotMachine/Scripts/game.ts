@@ -1,10 +1,13 @@
-﻿// createJS Boilerplate for COMP397
+﻿// this is the game controller
+// author: Yue Zhao
+// last edited time: 2015-2-25
 
 
 // viriables ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 var canvas; // reference to the HTML 5 Canvas element
 var stage: createjs.Stage; // reference to the Stage
-
+var tiles: createjs.Bitmap[] = [];
+var reelContainers: createjs.Container[] = [];
 
 // game objects
 var game: createjs.Container; // main Game Container Object
@@ -15,12 +18,15 @@ var betOneButton: createjs.Bitmap;
 var resetButton: createjs.Bitmap;
 var powerButton: createjs.Bitmap;
 
+var txt_jackpot: createjs.Text;
+var txt_credits: createjs.Text;
+var txt_playerBet: createjs.Text;
+var txt_payout: createjs.Text;
+
 
 // functions ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 function init() {
-
-
 
     canvas = document.getElementById("canvas");
     stage = new createjs.Stage(canvas); // parent Object
@@ -124,6 +130,15 @@ function createUI() {
     background = new createjs.Bitmap("assets/images/slotMachine3.png");
     game.addChild(background); // add the background to the game container
 
+    // add tile containers
+    for (var index = 0; index < NUM_REELS; index++) {
+        reelContainers[index] = new createjs.Container();
+        reelContainers[index].x = 71 + 100 * index;
+        reelContainers[index].y = 147;
+        game.addChild(reelContainers[index]);
+    }
+
+
     // spin Button
     spinButton = new createjs.Bitmap("assets/images/btn_Spin.png");
     game.addChild(spinButton);
@@ -208,6 +223,7 @@ var playerBet: number;
 var winNumber: number;
 var lossNumber: number;
 var winRatio: number;
+var NUM_REELS: number = 3;
 
 var spinResult;
 var fruits: string;
@@ -220,10 +236,7 @@ var bells: number;
 var sevens: number;
 var blanks: number;
 
-var txt_jackpot: createjs.Text;
-var txt_credits: createjs.Text;
-var txt_playerBet: createjs.Text;
-var txt_payout: createjs.Text;
+
 function initText() {
 
     txt_jackpot = new createjs.Text(jackpot.toString(), "20px Arial", "#ffffff");
@@ -459,26 +472,14 @@ function spin() {
     }
 }
 
-var reel0: createjs.Bitmap;
-var reel1: createjs.Bitmap;
-var reel2: createjs.Bitmap;
 function showResult() {
     spinResult = Reels();
     fruits = spinResult[0] + " - " + spinResult[1] + " - " + spinResult[2];
-    // add image to reel0
-    reel0 = new createjs.Bitmap("assets/images/symbols/" + spinResult[0] + ".png");
-    game.addChild(reel0);
-    reel0.x = 71;
-    reel0.y = 147;
-    // add image to reel1
-    reel1 = new createjs.Bitmap("assets/images/symbols/" + spinResult[1] + ".png");
-    game.addChild(reel1);
-    reel1.x = 171;
-    reel1.y = 147;
-    // add image to reel2
-    reel2 = new createjs.Bitmap("assets/images/symbols/" + spinResult[2] + ".png");
-    game.addChild(reel2);
-    reel2.x = 271;
-    reel2.y = 147;
+
+    for (var index = 0; index < NUM_REELS; index++) {
+        reelContainers[index].removeAllChildren();
+        tiles[index] = new createjs.Bitmap("assets/images/symbols/" + spinResult[index] + ".png");
+        reelContainers[index].addChild(tiles[index]);
+    }
 }
 // end of game logic part+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
