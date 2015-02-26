@@ -1,6 +1,41 @@
 // this is the game controller
 // author: Yue Zhao
 // last edited time: 2015-2-25
+var Button = (function () {
+    function Button(path, x, y) {
+        this._x = x;
+        this._y = y;
+        this._image = new createjs.Bitmap(path);
+        this._image.x = this._x;
+        this._image.y = this._y;
+        this._image.addEventListener("mouseover", this._buttonOver);
+        this._image.addEventListener("mouseout", this._buttonOut);
+    }
+    // PUBLIC PROPERTIES
+    Button.prototype.setX = function (x) {
+        this._x = x;
+    };
+    Button.prototype.getX = function () {
+        return this._x;
+    };
+    Button.prototype.setY = function (y) {
+        this._y = y;
+    };
+    Button.prototype.getY = function () {
+        return this._y;
+    };
+    Button.prototype.getImage = function () {
+        return this._image;
+    };
+    // PRIVATE EVENT HANDLERS
+    Button.prototype._buttonOut = function (event) {
+        event.currentTarget.alpha = 1; // 100% Alpha 
+    };
+    Button.prototype._buttonOver = function (event) {
+        event.currentTarget.alpha = 0.5;
+    };
+    return Button;
+})();
 // viriables ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 var canvas; // reference to the HTML 5 Canvas element
 var stage; // reference to the Stage
@@ -37,35 +72,17 @@ function spinButtonClicked() {
     console.log("Spin Button Clicked");
     spin();
 }
-function spinButtonOut() {
-    spinButton.alpha = 1; // 100% Alpha 
-}
-function spinButtonOver() {
-    spinButton.alpha = 0.7;
-}
 // betMaxButton event listeners
 function betMaxButtonClicked() {
     console.log("Bet Max Button Clicked");
     playerBet = playerMoney;
     showPlayerStats();
 }
-function betMaxButtonOut() {
-    betMaxButton.alpha = 1; // 100% Alpha 
-}
-function betMaxButtonOver() {
-    betMaxButton.alpha = 0.7;
-}
 // betOneButton event listeners
 function betOneButtonClicked() {
     console.log("Bet One Button Clicked");
     playerBet += 10;
     showPlayerStats();
-}
-function betOneButtonOut() {
-    betOneButton.alpha = 1; // 100% Alpha 
-}
-function betOneButtonOver() {
-    betOneButton.alpha = 0.7;
 }
 // resetButton event listeners
 function resetButtonClicked() {
@@ -74,22 +91,10 @@ function resetButtonClicked() {
     showPlayerStats();
     showResult();
 }
-function resetButtonOut() {
-    resetButton.alpha = 1; // 100% Alpha 
-}
-function resetButtonOver() {
-    resetButton.alpha = 0.7;
-}
 // powerButton event listeners
 function powerButtonClicked() {
     console.log("Power Button Clicked");
     alert("Thank you for playing this game.");
-}
-function powerButtonOut() {
-    powerButton.alpha = 1; // 100% Alpha 
-}
-function powerButtonOver() {
-    powerButton.alpha = 0.7;
 }
 // end button event listeners----------------------------------------------------------------------------------------------
 // create UIs
@@ -103,50 +108,30 @@ function createUI() {
         game.addChild(reelContainers[index]);
     }
     // spin Button
-    spinButton = new createjs.Bitmap("assets/images/btn_Spin.png");
-    game.addChild(spinButton);
-    spinButton.x = 310;
-    spinButton.y = 325;
+    spinButton = new Button("assets/images/btn_Spin.png", 310, 325);
+    game.addChild(spinButton.getImage());
     // spin Button Event Listeners
-    spinButton.addEventListener("click", spinButtonClicked);
-    spinButton.addEventListener("mouseover", spinButtonOver);
-    spinButton.addEventListener("mouseout", spinButtonOut);
+    spinButton.getImage().addEventListener("click", spinButtonClicked);
     // bet Max Button
-    betMaxButton = new createjs.Bitmap("assets/images/btn_BetMax.png");
-    game.addChild(betMaxButton);
-    betMaxButton.x = 155;
-    betMaxButton.y = 345;
+    betMaxButton = new Button("assets/images/btn_BetMax.png", 155, 345);
+    game.addChild(betMaxButton.getImage());
     // bet Max Event Listeners
-    betMaxButton.addEventListener("click", betMaxButtonClicked);
-    betMaxButton.addEventListener("mouseover", betMaxButtonOver);
-    betMaxButton.addEventListener("mouseout", betMaxButtonOut);
+    betMaxButton.getImage().addEventListener("click", betMaxButtonClicked);
     // bet One Button
-    betOneButton = new createjs.Bitmap("assets/images/btn_BetOne.png");
-    game.addChild(betOneButton);
-    betOneButton.x = 80;
-    betOneButton.y = 345;
+    betOneButton = new Button("assets/images/btn_BetOne.png", 80, 345);
+    game.addChild(betOneButton.getImage());
     // bet One Event Listeners
-    betOneButton.addEventListener("click", betOneButtonClicked);
-    betOneButton.addEventListener("mouseover", betOneButtonOver);
-    betOneButton.addEventListener("mouseout", betOneButtonOut);
+    betOneButton.getImage().addEventListener("click", betOneButtonClicked);
     // reset Button
-    resetButton = new createjs.Bitmap("assets/images/btn_Reset.png");
-    game.addChild(resetButton);
-    resetButton.x = 230;
-    resetButton.y = 345;
+    resetButton = new Button("assets/images/btn_Reset.png", 230, 345);
+    game.addChild(resetButton.getImage());
     // reset button Event Listeners
-    resetButton.addEventListener("click", resetButtonClicked);
-    resetButton.addEventListener("mouseover", resetButtonOver);
-    resetButton.addEventListener("mouseout", resetButtonOut);
+    resetButton.getImage().addEventListener("click", resetButtonClicked);
     // power Button
-    powerButton = new createjs.Bitmap("assets/images/btn_Power.png");
-    game.addChild(powerButton);
-    powerButton.x = 12;
-    powerButton.y = 345;
+    powerButton = new Button("assets/images/btn_Power.png", 12, 345);
+    game.addChild(powerButton.getImage());
     // power button Event Listeners
-    powerButton.addEventListener("click", powerButtonClicked);
-    powerButton.addEventListener("mouseover", powerButtonOver);
-    powerButton.addEventListener("mouseout", powerButtonOut);
+    powerButton.getImage().addEventListener("click", powerButtonClicked);
 }
 function main() {
     game = new createjs.Container(); // instantiates the Game Container

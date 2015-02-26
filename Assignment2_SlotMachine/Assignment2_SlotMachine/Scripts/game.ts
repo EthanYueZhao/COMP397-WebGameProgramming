@@ -2,6 +2,56 @@
 // author: Yue Zhao
 // last edited time: 2015-2-25
 
+class Button {
+    private _image: createjs.Bitmap;
+    private _x: number;
+    private _y: number;
+
+    constructor(path: string, x: number, y: number) {
+        this._x = x;
+        this._y = y;
+        this._image = new createjs.Bitmap(path);
+        this._image.x = this._x;
+        this._image.y = this._y;
+
+        this._image.addEventListener("mouseover", this._buttonOver);
+        this._image.addEventListener("mouseout", this._buttonOut);
+    }
+
+    // PUBLIC PROPERTIES
+    public setX(x: number): void {
+        this._x = x;
+    }
+
+    public getX(): number {
+        return this._x;
+    }
+
+    public setY(y: number): void {
+        this._y = y;
+    }
+
+    public getY(): number {
+        return this._y;
+    }
+
+    public getImage(): createjs.Bitmap {
+        return this._image;
+    }
+
+
+    // PRIVATE EVENT HANDLERS
+    private _buttonOut(event: createjs.MouseEvent): void {
+        event.currentTarget.alpha = 1; // 100% Alpha 
+    }
+
+    private _buttonOver(event: createjs.MouseEvent): void {
+        event.currentTarget.alpha = 0.5;
+    }
+}
+
+
+
 
 // viriables ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 var canvas; // reference to the HTML 5 Canvas element
@@ -12,11 +62,11 @@ var reelContainers: createjs.Container[] = [];
 // game objects
 var game: createjs.Container; // main Game Container Object
 var background: createjs.Bitmap;
-var spinButton: createjs.Bitmap;
-var betMaxButton: createjs.Bitmap;
-var betOneButton: createjs.Bitmap;
-var resetButton: createjs.Bitmap;
-var powerButton: createjs.Bitmap;
+var spinButton: Button;
+var betMaxButton: Button;
+var betOneButton: Button;
+var resetButton: Button;
+var powerButton: Button;
 
 var txt_jackpot: createjs.Text;
 var txt_credits: createjs.Text;
@@ -51,16 +101,6 @@ function spinButtonClicked() {
     spin();
 }
 
-function spinButtonOut() {
-    spinButton.alpha = 1; // 100% Alpha 
-
-}
-
-function spinButtonOver() {
-    spinButton.alpha = 0.7;
-
-}
-
 // betMaxButton event listeners
 function betMaxButtonClicked() {
     console.log("Bet Max Button Clicked");
@@ -68,29 +108,11 @@ function betMaxButtonClicked() {
     showPlayerStats();
 }
 
-function betMaxButtonOut() {
-    betMaxButton.alpha = 1; // 100% Alpha 
-
-}
-
-function betMaxButtonOver() {
-    betMaxButton.alpha = 0.7;
-
-}
-
 // betOneButton event listeners
 function betOneButtonClicked() {
     console.log("Bet One Button Clicked");
     playerBet += 10;
     showPlayerStats();
-}
-
-function betOneButtonOut() {
-    betOneButton.alpha = 1; // 100% Alpha 
-}
-
-function betOneButtonOver() {
-    betOneButton.alpha = 0.7;
 }
 
 // resetButton event listeners
@@ -101,27 +123,12 @@ function resetButtonClicked() {
     showResult();
 }
 
-function resetButtonOut() {
-    resetButton.alpha = 1; // 100% Alpha 
-}
-
-function resetButtonOver() {
-    resetButton.alpha = 0.7;
-}
-
 // powerButton event listeners
 function powerButtonClicked() {
     console.log("Power Button Clicked");
     alert("Thank you for playing this game.");
 }
 
-function powerButtonOut() {
-    powerButton.alpha = 1; // 100% Alpha 
-}
-
-function powerButtonOver() {
-    powerButton.alpha = 0.7;
-}
 // end button event listeners----------------------------------------------------------------------------------------------
 
 // create UIs
@@ -140,62 +147,40 @@ function createUI() {
 
 
     // spin Button
-    spinButton = new createjs.Bitmap("assets/images/btn_Spin.png");
-    game.addChild(spinButton);
-    spinButton.x = 310;
-    spinButton.y = 325;
+    spinButton = new Button("assets/images/btn_Spin.png", 310, 325);
+    game.addChild(spinButton.getImage());
 
     // spin Button Event Listeners
-    spinButton.addEventListener("click", spinButtonClicked);
-    spinButton.addEventListener("mouseover", spinButtonOver);
-    spinButton.addEventListener("mouseout", spinButtonOut);
-
-
+    spinButton.getImage().addEventListener("click", spinButtonClicked);
 
     // bet Max Button
-    betMaxButton = new createjs.Bitmap("assets/images/btn_BetMax.png");
-    game.addChild(betMaxButton);
-    betMaxButton.x = 155;
-    betMaxButton.y = 345;
+    betMaxButton = new Button("assets/images/btn_BetMax.png", 155, 345);
+    game.addChild(betMaxButton.getImage());
 
     // bet Max Event Listeners
-    betMaxButton.addEventListener("click", betMaxButtonClicked);
-    betMaxButton.addEventListener("mouseover", betMaxButtonOver);
-    betMaxButton.addEventListener("mouseout", betMaxButtonOut);
+    betMaxButton.getImage().addEventListener("click", betMaxButtonClicked);
+
 
     // bet One Button
-    betOneButton = new createjs.Bitmap("assets/images/btn_BetOne.png");
-    game.addChild(betOneButton);
-    betOneButton.x = 80;
-    betOneButton.y = 345;
+    betOneButton = new Button("assets/images/btn_BetOne.png", 80, 345);
+    game.addChild(betOneButton.getImage());
 
     // bet One Event Listeners
-    betOneButton.addEventListener("click", betOneButtonClicked);
-    betOneButton.addEventListener("mouseover", betOneButtonOver);
-    betOneButton.addEventListener("mouseout", betOneButtonOut);
+    betOneButton.getImage().addEventListener("click", betOneButtonClicked);
 
     // reset Button
-    resetButton = new createjs.Bitmap("assets/images/btn_Reset.png");
-    game.addChild(resetButton);
-    resetButton.x = 230;
-    resetButton.y = 345;
+    resetButton = new Button("assets/images/btn_Reset.png", 230, 345);
+    game.addChild(resetButton.getImage());
 
     // reset button Event Listeners
-    resetButton.addEventListener("click", resetButtonClicked);
-    resetButton.addEventListener("mouseover", resetButtonOver);
-    resetButton.addEventListener("mouseout", resetButtonOut);
+    resetButton.getImage().addEventListener("click", resetButtonClicked);
 
     // power Button
-    powerButton = new createjs.Bitmap("assets/images/btn_Power.png");
-    game.addChild(powerButton);
-    powerButton.x = 12;
-    powerButton.y = 345;
+    powerButton = new Button("assets/images/btn_Power.png", 12, 345);
+    game.addChild(powerButton.getImage());
 
     // power button Event Listeners
-    powerButton.addEventListener("click", powerButtonClicked);
-    powerButton.addEventListener("mouseover", powerButtonOver);
-    powerButton.addEventListener("mouseout", powerButtonOut);
-
+    powerButton.getImage().addEventListener("click", powerButtonClicked);
 }
 
 
