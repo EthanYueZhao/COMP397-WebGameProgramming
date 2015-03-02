@@ -7,7 +7,7 @@ module objects {
         game: createjs.Container;
         width: number;
         height: number;
-        dy: number;
+        dx: number;
         constructor(stage: createjs.Stage, game: createjs.Container) {
             this.stage = stage;
             this.game = game;
@@ -16,20 +16,20 @@ module objects {
             this.height = this.image.getBounds().height;
             this.reset();
 
-            this.dy = 5;
+            this.dx = 3;
 
             game.addChild(this.image);
         }
 
         update() {
-            this.image.y += this.dy;
-            if (this.image.y >= 0) {
+            this.image.x -= this.dx;
+            if (this.image.x <= -800) {
                 this.reset();
             }
         }
 
         reset() {
-            this.image.y = -960;
+            this.image.x = 0;
         }
 
         destroy() {

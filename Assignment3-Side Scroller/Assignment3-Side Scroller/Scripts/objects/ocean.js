@@ -10,17 +10,17 @@ var objects;
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;
             this.reset();
-            this.dy = 5;
+            this.dx = 3;
             game.addChild(this.image);
         }
         Ocean.prototype.update = function () {
-            this.image.y += this.dy;
-            if (this.image.y >= 0) {
+            this.image.x -= this.dx;
+            if (this.image.x <= -800) {
                 this.reset();
             }
         };
         Ocean.prototype.reset = function () {
-            this.image.y = -960;
+            this.image.x = 0;
         };
         Ocean.prototype.destroy = function () {
             game.removeChild(this.image);
@@ -29,4 +29,3 @@ var objects;
     })();
     objects.Ocean = Ocean;
 })(objects || (objects = {}));
-//# sourceMappingURL=ocean.js.map
