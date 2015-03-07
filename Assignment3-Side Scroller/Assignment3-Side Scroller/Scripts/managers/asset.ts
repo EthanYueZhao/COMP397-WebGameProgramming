@@ -1,5 +1,5 @@
-﻿'use strict'
-module managers {
+﻿module managers {
+'use strict'
     // Image and Sound Manifest;
     var assetManifest = [
         { id: "loading", src: "assets/images/loading.jpg" },
@@ -27,19 +27,28 @@ module managers {
             "cloud": [19],
             "instructionsButton": [1],
             "island": [2],
-            "plane": [0,5],
-            "player": [0,5],
+            "plane": [0, 5],
+            "player": [0, 5],
             "playButton": [4],
             "tryAgainButton": [5]
         }
     }
-    //var spriteSheetData = {
-    //    "images": ["assets/images/Scavengers_SpriteSheet.png"],
-    //    "frames": { width: 32, height: 32, regX: 16, regY: 16 },
-    //    "animations": {
-    //        player:[0,5]
-    //    }
-    //}
+
+    // buttons sprite data
+    var buttonSheetData = {
+        "images": ["assets/images/buttons.png"],
+        "frames": [
+            [0, 0, 187, 75],
+            [0, 77, 187, 75],
+            [0, 153, 187, 75]
+        ],
+        "animations": {
+            "playBtn": [0],
+            "instructionBtn": [1],
+            "againBtn": [2]
+        }
+    }
+
 
     // Asset Manager Class
     export class Assets {
@@ -48,6 +57,7 @@ module managers {
 
         public static loader;
         public static atlas: createjs.SpriteSheet;
+        public static buttons: createjs.SpriteSheet;
 
         public static init() {
             createjs.Sound.initializeDefaultPlugins();
@@ -55,6 +65,7 @@ module managers {
             this.loader.installPlugin(createjs.Sound);
             this.loader.loadManifest(assetManifest);
             this.atlas = new createjs.SpriteSheet(spriteSheetData);
+            this.buttons = new createjs.SpriteSheet(buttonSheetData);
         }
 
     }

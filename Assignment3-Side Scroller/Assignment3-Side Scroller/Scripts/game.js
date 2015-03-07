@@ -24,6 +24,7 @@ var scoreboard;
 var collision;
 var tryAgain;
 var playButton;
+var instructionButton;
 var currentState;
 var currentStateFunction;
 // Preload function - Loads Assets and initializes game;

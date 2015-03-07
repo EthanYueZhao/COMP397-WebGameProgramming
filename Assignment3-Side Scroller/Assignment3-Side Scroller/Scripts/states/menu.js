@@ -8,6 +8,7 @@
 /// <reference path="../objects/label.ts" />
 var states;
 (function (states) {
+    'use strict';
     function playButtonClicked(event) {
         stage.removeChild(game);
         player.destroy();
@@ -31,13 +32,17 @@ var states;
         player = new objects.Player(stage, game);
         // Show Cursor
         stage.cursor = "default";
-        // Display Game Over
-        gameNameLabel = new objects.Label(stage.canvas.width / 2, 40, "MAIL PILOT");
+        // Display Game Name
+        gameNameLabel = new objects.Label(stage.canvas.width / 2, 100, "Survivor");
         game.addChild(gameNameLabel);
         // Display Play Again Button
-        playButton = new objects.Button(stage.canvas.width / 2, 300, "playButton");
+        playButton = new objects.Button(stage.canvas.width / 2, 200, "playBtn");
         game.addChild(playButton);
         playButton.addEventListener("click", playButtonClicked);
+        // Display Instruction Button
+        instructionButton = new objects.Button(stage.canvas.width / 2, 280, "instructionBtn");
+        game.addChild(instructionButton);
+        instructionButton.addEventListener("click", playButtonClicked);
         stage.addChild(game);
     }
     states.menu = menu;

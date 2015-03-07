@@ -42,7 +42,7 @@ var states;
         finalScore = new objects.Label(stage.canvas.width / 2, 160, scoreboard.score.toString());
         game.addChild(finalScore);
         // Display Try Again Button
-        tryAgain = new objects.Button(stage.canvas.width / 2, 300, "tryAgainButton");
+        tryAgain = new objects.Button(stage.canvas.width / 2, 300, "againBtn");
         game.addChild(tryAgain);
         tryAgain.addEventListener("click", tryAgainClicked);
         stage.addChild(game);

@@ -1,10 +1,10 @@
 ﻿/// <reference path="../constants.ts" />
 /// <reference path="../managers/asset.ts" />
-'use strict'
 module objects {
+'use strict'
     export class Button extends createjs.Sprite {
         constructor(x:number, y:number, buttonIDString: string) {
-            super(managers.Assets.atlas, buttonIDString);
+            super(managers.Assets.buttons, buttonIDString);
             this.regX = this.getBounds().width / 2;
             this.regY = this.getBounds().height / 2;
             this.x = x;

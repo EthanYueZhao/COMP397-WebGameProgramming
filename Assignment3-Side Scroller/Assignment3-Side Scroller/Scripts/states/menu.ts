@@ -7,6 +7,7 @@
 /// <reference path="../objects/button.ts" />
 /// <reference path="../objects/label.ts" />
 module states {
+    'use strict'
     export function playButtonClicked(event: MouseEvent) {
         stage.removeChild(game);
         player.destroy();
@@ -34,14 +35,19 @@ module states {
         // Show Cursor
         stage.cursor = "default";
 
-        // Display Game Over
-        gameNameLabel = new objects.Label(stage.canvas.width / 2, 40, "MAIL PILOT");
+        // Display Game Name
+        gameNameLabel = new objects.Label(stage.canvas.width / 2, 100, "Survivor");
         game.addChild(gameNameLabel);
 
         // Display Play Again Button
-        playButton = new objects.Button(stage.canvas.width / 2, 300, "playButton");
+        playButton = new objects.Button(stage.canvas.width / 2, 200, "playBtn");
         game.addChild(playButton);
         playButton.addEventListener("click", playButtonClicked);
+
+        // Display Instruction Button
+        instructionButton = new objects.Button(stage.canvas.width / 2, 280, "instructionBtn");
+        game.addChild(instructionButton);
+        instructionButton.addEventListener("click", playButtonClicked);
 
         stage.addChild(game);
     }
