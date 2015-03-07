@@ -1,7 +1,7 @@
 ﻿/// <reference path="../managers/asset.ts" />
 module objects {
     // Plane Class
-    export class Plane {
+    export class Player {
         image: createjs.Sprite;
         stage: createjs.Stage;
         game: createjs.Container;
@@ -24,6 +24,7 @@ module objects {
 
         update() {
             this.image.x = this.stage.mouseX;
+            this.image.y = this.stage.mouseY;
         }
         destroy() {
             this.engineSound.stop();

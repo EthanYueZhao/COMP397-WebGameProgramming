@@ -2,8 +2,8 @@
 var objects;
 (function (objects) {
     // Plane Class
-    var Plane = (function () {
-        function Plane(stage, game) {
+    var Player = (function () {
+        function Player(stage, game) {
             this.stage = stage;
             this.game = game;
             this.image = new createjs.Sprite(managers.Assets.atlas, "plane");
@@ -15,15 +15,16 @@ var objects;
             game.addChild(this.image);
             this.engineSound = createjs.Sound.play('engine', createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 1, 0);
         }
-        Plane.prototype.update = function () {
+        Player.prototype.update = function () {
             this.image.x = this.stage.mouseX;
+            this.image.y = this.stage.mouseY;
         };
-        Plane.prototype.destroy = function () {
+        Player.prototype.destroy = function () {
             this.engineSound.stop();
             game.removeChild(this.image);
         };
-        return Plane;
+        return Player;
     })();
-    objects.Plane = Plane;
+    objects.Player = Player;
 })(objects || (objects = {}));
 //# sourceMappingURL=plane.js.map

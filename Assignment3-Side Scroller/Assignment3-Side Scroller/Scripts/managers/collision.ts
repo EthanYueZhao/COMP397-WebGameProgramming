@@ -7,12 +7,12 @@ module managers {
     // Collision Manager Class
     export class Collision {
         // class variables
-        private plane: objects.Plane;
+        private plane: objects.Player;
         private island: objects.Island;
         private clouds = [];
         private scoreboard: objects.Scoreboard;
 
-        constructor(plane: objects.Plane, island: objects.Island, clouds, scoreboard: objects.Scoreboard) {
+        constructor(plane: objects.Player, island: objects.Island, clouds, scoreboard: objects.Scoreboard) {
             this.plane = plane;
             this.island = island;
             this.clouds = clouds;
