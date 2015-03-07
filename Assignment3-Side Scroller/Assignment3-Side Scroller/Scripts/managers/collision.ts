@@ -1,6 +1,6 @@
 ﻿/// <reference path="../objects/cloud.ts" />
 /// <reference path="../objects/island.ts" />
-/// <reference path="../objects/plane.ts" />
+/// <reference path="../objects/player.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 
 module managers {

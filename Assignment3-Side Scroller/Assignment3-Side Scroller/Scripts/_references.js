@@ -22,7 +22,6 @@
 /// <reference path="objects/island.js" />
 /// <reference path="objects/label.js" />
 /// <reference path="objects/ocean.js" />
-/// <reference path="objects/plane.js" />
 /// <reference path="objects/scoreboard.js" />
 /// <reference path="states/gameover.js" />
 /// <reference path="states/menu.js" />

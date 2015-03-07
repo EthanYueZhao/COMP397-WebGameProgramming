@@ -1,4 +1,5 @@
 /// <reference path="../managers/asset.ts" />
+'use strict';
 var objects;
 (function (objects) {
     // Plane Class
@@ -27,4 +28,4 @@ var objects;
     })();
     objects.Player = Player;
 })(objects || (objects = {}));
-//# sourceMappingURL=plane.js.map
+//# sourceMappingURL=player.js.map

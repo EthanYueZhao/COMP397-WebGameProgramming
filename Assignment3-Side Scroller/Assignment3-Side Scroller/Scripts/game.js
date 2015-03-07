@@ -3,7 +3,7 @@
 /// <reference path="objects/cloud.ts" />
 /// <reference path="objects/island.ts" />
 /// <reference path="objects/ocean.ts" />
-/// <reference path="objects/plane.ts" />
+/// <reference path="objects/player.ts" />
 /// <reference path="objects/scoreboard.ts" />
 /// <reference path="objects/label.ts" />
 /// <reference path="objects/button.ts" />
@@ -13,10 +13,11 @@
 /// <reference path="states/gameover.ts" />
 // Mail Pilot Version 11 - Added basic state machine structure - Added Button and Label classes
 // Changed online repo
+'use strict';
 var stage;
 var game;
 var ocean;
-var plane;
+var player;
 var island;
 var clouds = []; // Clouds array;
 var scoreboard;

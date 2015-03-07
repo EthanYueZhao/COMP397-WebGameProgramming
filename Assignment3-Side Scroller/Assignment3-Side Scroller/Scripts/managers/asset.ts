@@ -1,4 +1,5 @@
-﻿module managers {
+﻿'use strict'
+module managers {
     // Image and Sound Manifest;
     var assetManifest = [
         { id: "loading", src: "assets/images/loading.jpg" },

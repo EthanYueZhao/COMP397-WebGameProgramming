@@ -3,15 +3,16 @@
 /// <reference path="../objects/island.ts" />
 /// <reference path="../objects/label.ts" />
 /// <reference path="../objects/ocean.ts" />
-/// <reference path="../objects/plane.ts" />
+/// <reference path="../objects/player.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 /// <reference path="../managers/collision.ts" />
+'use strict';
 var states;
 (function (states) {
     function playState() {
         ocean.update();
         island.update();
-        plane.update();
+        player.update();
         for (var count = 0; count < constants.CLOUD_NUM; count++) {
             clouds[count].update();
         }
@@ -19,7 +20,7 @@ var states;
         scoreboard.update();
         if (scoreboard.lives <= 0) {
             stage.removeChild(game);
-            plane.destroy();
+            player.destroy();
             game.removeAllChildren();
             game.removeAllEventListeners();
             currentState = constants.GAME_OVER_STATE;
@@ -34,7 +35,7 @@ var states;
         // Instantiate Game Objects
         ocean = new objects.Ocean(stage, game);
         island = new objects.Island(stage, game);
-        plane = new objects.Player(stage, game);
+        player = new objects.Player(stage, game);
         // Show Cursor
         stage.cursor = "none";
         for (var count = 0; count < constants.CLOUD_NUM; count++) {
@@ -43,7 +44,7 @@ var states;
         // Display Scoreboard
         scoreboard = new objects.Scoreboard(stage, game);
         // Instantiate Collision Manager
-        collision = new managers.Collision(plane, island, clouds, scoreboard);
+        collision = new managers.Collision(player, island, clouds, scoreboard);
         stage.addChild(game);
     }
     states.play = play;

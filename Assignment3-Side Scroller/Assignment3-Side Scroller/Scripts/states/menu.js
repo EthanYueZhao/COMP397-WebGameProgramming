@@ -1,6 +1,6 @@
 /// <reference path="../constants.ts" />
 /// <reference path="../objects/scoreboard.ts" />
-/// <reference path="../objects/plane.ts" />
+/// <reference path="../objects/player.ts" />
 /// <reference path="../objects/ocean.ts" />
 /// <reference path="../objects/island.ts" />
 /// <reference path="../objects/cloud.ts" />
@@ -10,7 +10,7 @@ var states;
 (function (states) {
     function playButtonClicked(event) {
         stage.removeChild(game);
-        plane.destroy();
+        player.destroy();
         game.removeAllChildren();
         game.removeAllEventListeners();
         currentState = constants.PLAY_STATE;
@@ -19,7 +19,7 @@ var states;
     states.playButtonClicked = playButtonClicked;
     function menuState() {
         ocean.update();
-        plane.update();
+        player.update();
     }
     states.menuState = menuState;
     function menu() {
@@ -28,7 +28,7 @@ var states;
         game = new createjs.Container();
         // Instantiate Game Objects
         ocean = new objects.Ocean(stage, game);
-        plane = new objects.Player(stage, game);
+        player = new objects.Player(stage, game);
         // Show Cursor
         stage.cursor = "default";
         // Display Game Over

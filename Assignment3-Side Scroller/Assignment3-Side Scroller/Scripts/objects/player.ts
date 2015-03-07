@@ -1,4 +1,5 @@
 ﻿/// <reference path="../managers/asset.ts" />
+'use strict'
 module objects {
     // Plane Class
     export class Player {

@@ -1,3 +1,4 @@
+'use strict';
 var managers;
 (function (managers) {
     // Image and Sound Manifest;
