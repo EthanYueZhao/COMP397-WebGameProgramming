@@ -17,10 +17,10 @@
 'use strict';
 var stage;
 var game;
-var ocean;
+var background;
 var player;
-var island;
-var clouds = []; // Clouds array;
+var cherry;
+var zombies = []; // Clouds array;
 var scoreboard;
 var collision;
 var tryAgain;

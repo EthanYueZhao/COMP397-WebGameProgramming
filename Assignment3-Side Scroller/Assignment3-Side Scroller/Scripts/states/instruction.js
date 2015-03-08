@@ -10,7 +10,7 @@ var states;
 (function (states) {
     'use strict';
     function instructionState() {
-        ocean.update();
+        background.update();
     }
     states.instructionState = instructionState;
     // show instruction when Instruction Button is clicked
@@ -29,7 +29,7 @@ var states;
         // Declare new Game Container
         game = new createjs.Container();
         // Instantiate Game Objects
-        ocean = new objects.Background(stage, game);
+        background = new objects.Background(stage, game);
         // Show Cursor
         stage.cursor = "default";
         // Display Instrucion title

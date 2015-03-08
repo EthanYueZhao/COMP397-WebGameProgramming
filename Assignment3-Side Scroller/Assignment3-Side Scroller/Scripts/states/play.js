@@ -10,11 +10,11 @@
 var states;
 (function (states) {
     function playState() {
-        ocean.update();
-        island.update();
+        background.update();
+        cherry.update();
         player.update();
         for (var count = 0; count < constants.ZOMBIE_NUM; count++) {
-            clouds[count].update();
+            zombies[count].update();
         }
         collision.update();
         scoreboard.update();
@@ -33,18 +33,18 @@ var states;
         // Declare new Game Container
         game = new createjs.Container();
         // Instantiate Game Objects
-        ocean = new objects.Background(stage, game);
-        island = new objects.Cherry(stage, game);
+        background = new objects.Background(stage, game);
+        cherry = new objects.Cherry(stage, game);
         player = new objects.Player(stage, game);
         // Show Cursor
         stage.cursor = "none";
         for (var count = 0; count < constants.ZOMBIE_NUM; count++) {
-            clouds[count] = new objects.Zombie(stage, game);
+            zombies[count] = new objects.Zombie(stage, game);
         }
         // Display Scoreboard
         scoreboard = new objects.Scoreboard(stage, game);
         // Instantiate Collision Manager
-        collision = new managers.Collision(player, island, clouds, scoreboard);
+        collision = new managers.Collision(player, cherry, zombies, scoreboard);
         stage.addChild(game);
     }
     states.play = play;

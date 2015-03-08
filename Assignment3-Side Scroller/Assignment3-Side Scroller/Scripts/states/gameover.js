@@ -10,7 +10,7 @@ var states;
 (function (states) {
     'use strict';
     function gameOverState() {
-        ocean.update();
+        background.update();
     }
     states.gameOverState = gameOverState;
     // Restart Game when Try Again Button is clicked
@@ -30,7 +30,7 @@ var states;
         // Declare new Game Container
         game = new createjs.Container();
         // Instantiate Game Objects
-        ocean = new objects.Background(stage, game);
+        background = new objects.Background(stage, game);
         // Show Cursor
         stage.cursor = "default";
         // Display Game Over

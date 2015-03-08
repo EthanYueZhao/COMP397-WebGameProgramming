@@ -20,10 +20,10 @@
 var stage: createjs.Stage;
 var game: createjs.Container;
 
-var ocean: objects.Background;
+var background: objects.Background;
 var player: objects.Player;
-var island: objects.Cherry;
-var clouds = []; // Clouds array;
+var cherry: objects.Cherry;
+var zombies = []; // Clouds array;
 var scoreboard: objects.Scoreboard;
 
 var collision: managers.Collision;

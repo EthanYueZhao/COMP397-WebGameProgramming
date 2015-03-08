@@ -29,7 +29,7 @@ module states {
         game = new createjs.Container();
 
         // Instantiate Game Objects
-        ocean = new objects.Background(stage, game);
+        background = new objects.Background(stage, game);
         player = new objects.Player(stage, game);
 
         // Show Cursor
