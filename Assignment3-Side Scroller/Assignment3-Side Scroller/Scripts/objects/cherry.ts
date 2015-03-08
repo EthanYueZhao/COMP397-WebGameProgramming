@@ -1,13 +1,13 @@
 ﻿/// <reference path="../managers/asset.ts" />
 module objects {
     // Island Class
-    export class Island {
+    export class Cherry {
         image: createjs.Sprite;
         stage: createjs.Stage;
         game: createjs.Container;
         height: number;
         width: number;
-        dy: number;
+        dx: number;
         constructor(stage: createjs.Stage, game: createjs.Container) {
             this.stage = stage;
             this.game = game;
@@ -18,21 +18,21 @@ module objects {
             this.image.regY = this.height / 2;
             this.reset();
 
-            this.dy = 5;
+            this.dx = 1;
 
             game.addChild(this.image);
         }
 
         update() {
-            this.image.y += this.dy;
-            if (this.image.y > this.stage.canvas.height + this.height) {
+            this.image.x -= this.dx;
+            if (this.image.x < -this.width) {
                 this.reset();
             }
         }
 
         reset() {
-            this.image.x = Math.floor(Math.random() * this.stage.canvas.width);
-            this.image.y = -this.height;
+            this.image.y = Math.floor(Math.random() * this.stage.canvas.height);
+            this.image.x = this.stage.canvas.width + this.width;
         }
 
         destroy() {

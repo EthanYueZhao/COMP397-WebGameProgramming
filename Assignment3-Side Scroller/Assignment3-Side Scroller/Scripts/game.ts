@@ -22,7 +22,7 @@ var game: createjs.Container;
 
 var ocean: objects.Background;
 var player: objects.Player;
-var island: objects.Island;
+var island: objects.Cherry;
 var clouds = []; // Clouds array;
 var scoreboard: objects.Scoreboard;
 

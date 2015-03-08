@@ -37,7 +37,7 @@ module states {
 
         // Instantiate Game Objects
         ocean = new objects.Background(stage, game);
-        island = new objects.Island(stage, game);
+        island = new objects.Cherry(stage, game);
         player = new objects.Player(stage, game);
 
         // Show Cursor

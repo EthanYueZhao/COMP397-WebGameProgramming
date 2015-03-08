@@ -8,11 +8,11 @@ module managers {
     export class Collision {
         // class variables
         private plane: objects.Player;
-        private island: objects.Island;
+        private island: objects.Cherry;
         private clouds = [];
         private scoreboard: objects.Scoreboard;
 
-        constructor(plane: objects.Player, island: objects.Island, clouds, scoreboard: objects.Scoreboard) {
+        constructor(plane: objects.Player, island: objects.Cherry, clouds, scoreboard: objects.Scoreboard) {
             this.plane = plane;
             this.island = island;
             this.clouds = clouds;
