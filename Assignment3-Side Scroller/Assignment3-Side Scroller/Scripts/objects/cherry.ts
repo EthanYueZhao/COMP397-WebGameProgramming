@@ -18,7 +18,7 @@ module objects {
             this.image.regY = this.height / 2;
             this.reset();
 
-            this.dx = 1;
+            this.dx = 3;
 
             game.addChild(this.image);
         }

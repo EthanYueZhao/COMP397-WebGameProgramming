@@ -13,7 +13,7 @@ module states {
         island.update();
         player.update();
 
-        for (var count = 0; count < constants.CLOUD_NUM; count++) {
+        for (var count = 0; count < constants.ZOMBIE_NUM; count++) {
             clouds[count].update();
         }
 
@@ -44,7 +44,7 @@ module states {
         stage.cursor = "none";
 
         // Create multiple clouds
-        for (var count = 0; count < constants.CLOUD_NUM; count++) {
+        for (var count = 0; count < constants.ZOMBIE_NUM; count++) {
             clouds[count] = new objects.Zombie(stage, game);
         }
 

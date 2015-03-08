@@ -23,18 +23,18 @@ module objects {
         }
 
         update() {
-            this.image.y += this.dy;
-            this.image.x += this.dx;
-            if (this.image.y > this.stage.canvas.height + this.height) {
+            this.image.y -= this.dy;
+            this.image.x -= this.dx;
+            if (this.image.x < -this.width) {
                 this.reset();
             }
         }
 
         reset() {
-            this.image.x = Math.floor(Math.random() * this.stage.canvas.width);
-            this.dy = Math.floor(Math.random() * 5 + 5);
-            this.dx = Math.floor(Math.random() * -3) + Math.floor(Math.random() * 3);
-            this.image.y = -this.height;
+            this.image.x = this.stage.canvas.width + this.width;
+            this.image.y = Math.floor(Math.random() * this.stage.canvas.height);
+            this.dx = Math.floor(Math.random() * 5 + 5);
+            this.dy = Math.floor(Math.random() * -3) + Math.floor(Math.random() * 3);
         }
 
         destroy() {

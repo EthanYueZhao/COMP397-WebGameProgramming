@@ -55,7 +55,7 @@ var managers;
         };
         // Utility Function to Check Collisions
         Collision.prototype.update = function () {
-            for (var count = 0; count < constants.CLOUD_NUM; count++) {
+            for (var count = 0; count < constants.ZOMBIE_NUM; count++) {
                 this.planeAndCloud(this.clouds[count]);
             }
             this.planeAndIsland();

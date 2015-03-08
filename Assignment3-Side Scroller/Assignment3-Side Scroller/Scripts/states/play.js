@@ -13,7 +13,7 @@ var states;
         ocean.update();
         island.update();
         player.update();
-        for (var count = 0; count < constants.CLOUD_NUM; count++) {
+        for (var count = 0; count < constants.ZOMBIE_NUM; count++) {
             clouds[count].update();
         }
         collision.update();
@@ -38,7 +38,7 @@ var states;
         player = new objects.Player(stage, game);
         // Show Cursor
         stage.cursor = "none";
-        for (var count = 0; count < constants.CLOUD_NUM; count++) {
+        for (var count = 0; count < constants.ZOMBIE_NUM; count++) {
             clouds[count] = new objects.Zombie(stage, game);
         }
         // Display Scoreboard

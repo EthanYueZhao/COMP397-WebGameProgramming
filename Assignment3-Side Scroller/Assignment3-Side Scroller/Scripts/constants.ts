@@ -6,7 +6,7 @@
     export var INSTRUCTION_STATE: number = 3;
 
     // Game Constants
-    export var CLOUD_NUM: number = 3;
+    export var ZOMBIE_NUM: number = 5;
     export var LABEL_FONT = "50px Vijaya";
     export var LABEL_COLOUR = "#FF0000";
     export var PLANE_LIVES = 3;

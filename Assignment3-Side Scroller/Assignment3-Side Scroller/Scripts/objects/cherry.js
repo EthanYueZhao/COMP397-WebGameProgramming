@@ -12,7 +12,7 @@ var objects;
             this.image.regX = this.width / 2;
             this.image.regY = this.height / 2;
             this.reset();
-            this.dx = 1;
+            this.dx = 3;
             game.addChild(this.image);
         }
         Cherry.prototype.update = function () {
