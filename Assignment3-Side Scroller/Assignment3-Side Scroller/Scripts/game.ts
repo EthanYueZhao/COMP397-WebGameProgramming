@@ -12,8 +12,10 @@
 /// <reference path="states/menu.ts" />
 /// <reference path="states/gameover.ts" />
 
-// Mail Pilot Version 11 - Added basic state machine structure - Added Button and Label classes
-// Changed online repo
+// game name: Last Survivor
+// author: Yue Zhao
+// last edited at Mar-7,2015
+
 'use strict'
 var stage: createjs.Stage;
 var game: createjs.Container;
@@ -84,6 +86,13 @@ function changeState(state: number): void {
             // instantiate game over screen
             states.gameOver();
             break;
+
+        case constants.INSTRUCTION_STATE:
+            currentStateFunction = states.instructionState;
+            // instantiate game over screen
+            states.instruction();
+            break;
+
     }
 }
 

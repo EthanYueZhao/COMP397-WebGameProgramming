@@ -36,7 +36,7 @@ module states {
         stage.cursor = "default";
 
         // Display Game Name
-        gameNameLabel = new objects.Label(stage.canvas.width / 2, 100, "Survivor");
+        gameNameLabel = new objects.Label(stage.canvas.width / 2, 100, "Last Survivor");
         game.addChild(gameNameLabel);
 
         // Display Play Again Button
@@ -47,7 +47,7 @@ module states {
         // Display Instruction Button
         instructionButton = new objects.Button(stage.canvas.width / 2, 280, "instructionBtn");
         game.addChild(instructionButton);
-        instructionButton.addEventListener("click", playButtonClicked);
+        instructionButton.addEventListener("click", instructionButtonClicked);
 
         stage.addChild(game);
     }

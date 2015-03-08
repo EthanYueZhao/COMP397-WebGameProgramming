@@ -8,6 +8,7 @@
 /// <reference path="../objects/scoreboard.ts" />
 var states;
 (function (states) {
+    'use strict';
     function gameOverState() {
         ocean.update();
     }

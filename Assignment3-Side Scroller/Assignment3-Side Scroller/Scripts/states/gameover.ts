@@ -7,6 +7,7 @@
 /// <reference path="../objects/player.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 module states {
+    'use strict'
     export function gameOverState() {
         ocean.update();
     }
