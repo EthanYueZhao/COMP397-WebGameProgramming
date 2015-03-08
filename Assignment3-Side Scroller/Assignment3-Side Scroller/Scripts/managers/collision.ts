@@ -1,5 +1,5 @@
-﻿/// <reference path="../objects/cloud.ts" />
-/// <reference path="../objects/island.ts" />
+﻿/// <reference path="../objects/zombie.ts" />
+/// <reference path="../objects/cherry.ts" />
 /// <reference path="../objects/player.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 
@@ -37,7 +37,7 @@ module managers {
         }
 
         // check collision between plane and any cloud object
-        private planeAndCloud(cloud: objects.Cloud) {
+        private planeAndCloud(cloud: objects.Zombie) {
             var p1: createjs.Point = new createjs.Point();
             var p2: createjs.Point = new createjs.Point();
             p1.x = this.plane.image.x;

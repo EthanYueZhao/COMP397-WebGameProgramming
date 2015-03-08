@@ -1,32 +1,41 @@
+﻿/// <reference path="../constants.ts" />
 /// <reference path="../managers/asset.ts" />
-var objects;
-(function (objects) {
-    // Ocean Class
-    var Ocean = (function () {
-        function Ocean(stage, game) {
+module objects {
+    // Background Class
+    export class Background {
+        image: createjs.Bitmap;
+        stage: createjs.Stage;
+        game: createjs.Container;
+        width: number;
+        height: number;
+        dx: number;
+        constructor(stage: createjs.Stage, game: createjs.Container) {
             this.stage = stage;
             this.game = game;
             this.image = new createjs.Bitmap(managers.Assets.loader.getResult("bg"));
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;
             this.reset();
-            this.dx = 1;
+
+            this.dx = constants.BACKGROUND_STEP;
+
             game.addChild(this.image);
         }
-        Ocean.prototype.update = function () {
+
+        update() {
             this.image.x -= this.dx;
             if (this.image.x <= -640) {
                 this.reset();
             }
-        };
-        Ocean.prototype.reset = function () {
+        }
+
+        reset() {
             this.image.x = 0;
-        };
-        Ocean.prototype.destroy = function () {
+        }
+
+        destroy() {
             game.removeChild(this.image);
-        };
-        return Ocean;
-    })();
-    objects.Ocean = Ocean;
-})(objects || (objects = {}));
-//# sourceMappingURL=ocean.js.map
+        }
+    }
+
+}

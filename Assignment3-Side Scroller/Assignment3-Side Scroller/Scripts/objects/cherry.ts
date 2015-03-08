@@ -1,35 +1,38 @@
 ﻿/// <reference path="../managers/asset.ts" />
 module objects {
-    // Ocean Class
-    export class Ocean {
-        image: createjs.Bitmap;
+    // Island Class
+    export class Island {
+        image: createjs.Sprite;
         stage: createjs.Stage;
         game: createjs.Container;
-        width: number;
         height: number;
-        dx: number;
+        width: number;
+        dy: number;
         constructor(stage: createjs.Stage, game: createjs.Container) {
             this.stage = stage;
             this.game = game;
-            this.image = new createjs.Bitmap(managers.Assets.loader.getResult("bg"));
+            this.image = new createjs.Sprite(managers.Assets.atlas, "cherry");
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;
+            this.image.regX = this.width / 2;
+            this.image.regY = this.height / 2;
             this.reset();
 
-            this.dx = 1;
+            this.dy = 5;
 
             game.addChild(this.image);
         }
 
         update() {
-            this.image.x -= this.dx;
-            if (this.image.x <= -640) {
+            this.image.y += this.dy;
+            if (this.image.y > this.stage.canvas.height + this.height) {
                 this.reset();
             }
         }
 
         reset() {
-            this.image.x = 0;
+            this.image.x = Math.floor(Math.random() * this.stage.canvas.width);
+            this.image.y = -this.height;
         }
 
         destroy() {

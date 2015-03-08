@@ -6,7 +6,7 @@ var objects;
         function Island(stage, game) {
             this.stage = stage;
             this.game = game;
-            this.image = new createjs.Sprite(managers.Assets.atlas, "island");
+            this.image = new createjs.Sprite(managers.Assets.atlas, "cherry");
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;
             this.image.regX = this.width / 2;
@@ -32,4 +32,4 @@ var objects;
     })();
     objects.Island = Island;
 })(objects || (objects = {}));
-//# sourceMappingURL=island.js.map
+//# sourceMappingURL=cherry.js.map

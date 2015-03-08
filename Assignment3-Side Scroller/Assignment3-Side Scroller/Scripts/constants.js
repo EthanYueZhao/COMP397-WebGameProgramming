@@ -10,5 +10,6 @@ var constants;
     constants.LABEL_FONT = "50px Vijaya";
     constants.LABEL_COLOUR = "#FF0000";
     constants.PLANE_LIVES = 3;
+    constants.BACKGROUND_STEP = 1;
 })(constants || (constants = {}));
 //# sourceMappingURL=constants.js.map

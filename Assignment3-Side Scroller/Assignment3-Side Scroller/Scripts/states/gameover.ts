@@ -1,9 +1,9 @@
 ﻿/// <reference path="../constants.ts" />
 /// <reference path="../objects/button.ts" />
-/// <reference path="../objects/cloud.ts" />
-/// <reference path="../objects/island.ts" />
+/// <reference path="../objects/zombie.ts" />
+/// <reference path="../objects/cherry.ts" />
 /// <reference path="../objects/label.ts" />
-/// <reference path="../objects/ocean.ts" />
+/// <reference path="../objects/background.ts" />
 /// <reference path="../objects/player.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 module states {
@@ -31,7 +31,7 @@ module states {
         game = new createjs.Container();
 
         // Instantiate Game Objects
-        ocean = new objects.Ocean(stage, game);
+        ocean = new objects.Background(stage, game);
 
         // Show Cursor
         stage.cursor = "default";
