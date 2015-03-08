@@ -18,7 +18,7 @@ module states {
     }
 
     export function menuState() {
-        ocean.update();
+        //ocean.update();
         player.update();
     }
 

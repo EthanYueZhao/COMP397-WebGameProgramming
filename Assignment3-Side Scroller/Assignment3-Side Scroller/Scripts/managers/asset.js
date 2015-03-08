@@ -4,7 +4,7 @@ var managers;
     // Image and Sound Manifest;
     var assetManifest = [
         { id: "loading", src: "assets/images/loading.jpg" },
-        { id: "ocean", src: "assets/images/ocean.gif" },
+        { id: "bg", src: "assets/images/bg2.png" },
         { id: "engine", src: "assets/sounds/scavengers_music.mp3" },
         { id: "thunder", src: "assets/sounds/thunder.ogg" },
         { id: "yay", src: "assets/sounds/yay.ogg" }

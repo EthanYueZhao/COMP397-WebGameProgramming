@@ -61,6 +61,8 @@
   <ItemGroup>
     <Content Include="assets\images\1945.bmp" />
     <Content Include="assets\images\atlas.png" />
+    <Content Include="assets\images\bg.png" />
+    <Content Include="assets\images\bg2.png" />
     <Content Include="assets\images\buttons.png" />
     <Content Include="assets\images\cloud.png" />
     <Content Include="assets\images\island.png" />

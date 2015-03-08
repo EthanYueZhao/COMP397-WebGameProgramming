@@ -19,7 +19,7 @@ var states;
     }
     states.playButtonClicked = playButtonClicked;
     function menuState() {
-        ocean.update();
+        //ocean.update();
         player.update();
     }
     states.menuState = menuState;

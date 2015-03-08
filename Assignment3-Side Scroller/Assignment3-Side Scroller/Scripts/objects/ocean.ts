@@ -11,19 +11,19 @@ module objects {
         constructor(stage: createjs.Stage, game: createjs.Container) {
             this.stage = stage;
             this.game = game;
-            this.image = new createjs.Bitmap(managers.Assets.loader.getResult("ocean"));
+            this.image = new createjs.Bitmap(managers.Assets.loader.getResult("bg"));
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;
             this.reset();
 
-            this.dx = 3;
+            this.dx = 1;
 
             game.addChild(this.image);
         }
 
         update() {
             this.image.x -= this.dx;
-            if (this.image.x <= -800) {
+            if (this.image.x <= -640) {
                 this.reset();
             }
         }
