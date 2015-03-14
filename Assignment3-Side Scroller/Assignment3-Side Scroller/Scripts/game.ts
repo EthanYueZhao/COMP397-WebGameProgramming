@@ -1,4 +1,6 @@
-﻿/// <reference path="constants.ts" />
+﻿/// <reference path="lib/easeljs.d.ts" />
+/// <reference path="lib/createjs-lib.d.ts" />
+/// <reference path="constants.ts" />
 /// <reference path="managers/asset.ts" />
 /// <reference path="objects/zombie.ts" />
 /// <reference path="objects/cherry.ts" />
@@ -14,7 +16,7 @@
 
 // game name: Last Survivor
 // author: Yue Zhao
-// last edited at Mar-7,2015
+// last edited at Mar-14,2015
 
 'use strict'
 var stage: createjs.Stage;
@@ -35,6 +37,8 @@ var instructionButton: objects.Button;
 var currentState: number;
 var currentStateFunction;
 
+
+
 // Preload function - Loads Assets and initializes game;
 function preload(): void {
     managers.Assets.init();
@@ -51,6 +55,13 @@ function init(): void {
 
     currentState = constants.MENU_STATE;
     changeState(currentState);
+
+    window.onkeydown = movePlayer;
+    window.onkeyup = movePlayer;
+}
+
+function movePlayer(e) {
+   
 }
 
 // Add touch support for mobile devices

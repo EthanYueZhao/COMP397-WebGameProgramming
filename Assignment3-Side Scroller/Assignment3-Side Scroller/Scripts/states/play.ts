@@ -12,7 +12,7 @@ module states {
         background.update();
         cherry.update();
         player.update();
-
+        document.onkeydown = handleKeyDown;
         for (var count = 0; count < constants.ZOMBIE_NUM; count++) {
             zombies[count].update();
         }
@@ -28,6 +28,10 @@ module states {
             currentState = constants.GAME_OVER_STATE;
             changeState(currentState);
         }
+    }
+
+    function handleKeyDown() {
+        player.move(window.event);
     }
 
     // play state Function
