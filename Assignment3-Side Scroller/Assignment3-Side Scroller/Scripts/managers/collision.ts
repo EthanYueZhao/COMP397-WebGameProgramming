@@ -45,7 +45,7 @@ module managers {
             p2.x = cloud.image.x;
             p2.y = cloud.image.y;
             if (this.distance(p1, p2) < ((this.plane.height / 2) + (cloud.height / 2))) {
-                createjs.Sound.play("thunder");
+                createjs.Sound.play("Crash");
                 this.scoreboard.lives -= 1;
                 cloud.reset();
             }
@@ -60,7 +60,7 @@ module managers {
             p2.x = this.island.image.x;
             p2.y = this.island.image.y;
             if (this.distance(p1, p2) < ((this.plane.height / 2) + (this.island.height / 2))) {
-                createjs.Sound.play("yay");
+                createjs.Sound.play("Pickup");
                 this.scoreboard.score += 100;
                 this.island.reset();
             }

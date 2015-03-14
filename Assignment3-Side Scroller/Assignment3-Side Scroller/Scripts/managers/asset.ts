@@ -4,9 +4,9 @@
     var assetManifest = [
         { id: "loading", src: "assets/images/loading.jpg" },
         { id: "bg", src: "assets/images/bg2.png" },
-        { id: "engine", src: "assets/sounds/scavengers_music.mp3" },
-        { id: "thunder", src: "assets/sounds/thunder.ogg" },
-        { id: "yay", src: "assets/sounds/UP.mp3" }
+        { id: "BackGroundMusic", src: "assets/sounds/scavengers_music.mp3" },
+        { id: "Crash", src: "assets/sounds/Crash2.wav" },
+        { id: "Pickup", src: "assets/sounds/Pickup5.wav" }
     ];
 
     // SpriteSheet Data Object
@@ -18,8 +18,6 @@
             "instructionsButton": [1],
             "cherry": [19],
             "player": [0, 5],
-            "playButton": [4],
-            "tryAgainButton": [5]
         }
     }
 

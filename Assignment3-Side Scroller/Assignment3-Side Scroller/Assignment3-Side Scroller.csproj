@@ -64,21 +64,9 @@
     <Content Include="assets\images\buttons.png" />
     <Content Include="assets\images\loading.jpg" />
     <Content Include="assets\images\Scavengers_SpriteSheet.png" />
-    <Content Include="assets\sounds\scavengers_chop1.aif" />
-    <Content Include="assets\sounds\scavengers_chop2.aif" />
-    <Content Include="assets\sounds\scavengers_die.aif" />
-    <Content Include="assets\sounds\scavengers_enemy1.aif" />
-    <Content Include="assets\sounds\scavengers_enemy2.aif" />
-    <Content Include="assets\sounds\scavengers_footstep1.aif" />
-    <Content Include="assets\sounds\scavengers_footstep2.aif" />
-    <Content Include="assets\sounds\scavengers_fruit1.aif" />
-    <Content Include="assets\sounds\scavengers_fruit2.aif" />
-    <Content Include="assets\sounds\scavengers_music.aif" />
+    <Content Include="assets\sounds\Crash2.wav" />
+    <Content Include="assets\sounds\Pickup5.wav" />
     <Content Include="assets\sounds\scavengers_music.mp3" />
-    <Content Include="assets\sounds\scavengers_soda1.aif" />
-    <Content Include="assets\sounds\scavengers_soda2.aif" />
-    <Content Include="assets\sounds\UP.mp3" />
-    <Content Include="assets\sounds\UP.WAV" />
     <Content Include="css\app.css" />
     <Content Include="css\normalize.css" />
     <Content Include="index.html" />
@@ -125,8 +113,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\sounds\thunder.ogg" />
-    <Content Include="assets\sounds\yay.ogg" />
     <Content Include="Scripts\constants.js.map" />
     <Content Include="Scripts\game.js.map" />
     <Content Include="Scripts\lib\jquery-2.1.1.min.map" />
