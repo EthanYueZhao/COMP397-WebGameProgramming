@@ -1,7 +1,7 @@
 /// <reference path="../managers/asset.ts" />
 var objects;
 (function (objects) {
-    // Island Class
+    // Cherry Class
     var Cherry = (function () {
         function Cherry(stage, game) {
             this.stage = stage;

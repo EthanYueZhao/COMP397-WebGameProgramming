@@ -1,6 +1,6 @@
 ﻿/// <reference path="../managers/asset.ts" />
 module objects {
-    // Island Class
+    // Cherry Class
     export class Cherry {
         image: createjs.Sprite;
         stage: createjs.Stage;

@@ -1,7 +1,7 @@
 ﻿/// <reference path="../managers/asset.ts" />
 'use strict'
 module objects {
-    // Plane Class
+    // Player Class
     export class Player {
         image: createjs.Sprite;
         stage: createjs.Stage;
@@ -13,7 +13,7 @@ module objects {
             this.stage = stage;
             this.game = game;
             this.image = new createjs.Sprite(managers.Assets.atlas, "player");
-            this.image.x = 200;
+            this.image.x = 300;
             this.image.y = 430;
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;

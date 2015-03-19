@@ -2,13 +2,13 @@
 'use strict';
 var objects;
 (function (objects) {
-    // Plane Class
+    // Player Class
     var Player = (function () {
         function Player(stage, game) {
             this.stage = stage;
             this.game = game;
             this.image = new createjs.Sprite(managers.Assets.atlas, "player");
-            this.image.x = 200;
+            this.image.x = 300;
             this.image.y = 430;
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;

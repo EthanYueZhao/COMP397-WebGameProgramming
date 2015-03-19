@@ -1,6 +1,6 @@
 ﻿/// <reference path="../managers/asset.ts" />
 module objects {
-    // Cloud class
+    // Zombie class
     export class Zombie {
         image: createjs.Sprite;
         stage: createjs.Stage;

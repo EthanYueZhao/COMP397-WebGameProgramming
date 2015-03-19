@@ -1,7 +1,7 @@
 /// <reference path="../managers/asset.ts" />
 var objects;
 (function (objects) {
-    // Cloud class
+    // Zombie class
     var Zombie = (function () {
         function Zombie(stage, game) {
             this.stage = stage;

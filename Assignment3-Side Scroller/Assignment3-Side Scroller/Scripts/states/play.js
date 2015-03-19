@@ -29,6 +29,7 @@ var states;
         }
     }
     states.playState = playState;
+    // key down operation function
     function handleKeyDown() {
         player.move(window.event);
     }

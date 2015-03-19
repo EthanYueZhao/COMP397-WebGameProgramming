@@ -14,8 +14,9 @@
 /// <reference path="states/menu.ts" />
 /// <reference path="states/gameover.ts" />
 // game name: Last Survivor
+// file name: game.ts
 // author: Yue Zhao
-// last edited at Mar-14,2015
+// last edited at Mar-19,2015
 'use strict';
 var stage;
 var game;
@@ -44,10 +45,6 @@ function init() {
     optimizeForMobile();
     currentState = constants.MENU_STATE;
     changeState(currentState);
-    window.onkeydown = movePlayer;
-    window.onkeyup = movePlayer;
-}
-function movePlayer(e) {
 }
 // Add touch support for mobile devices
 function optimizeForMobile() {

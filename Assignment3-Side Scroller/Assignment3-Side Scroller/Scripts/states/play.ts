@@ -30,6 +30,7 @@ module states {
         }
     }
 
+    // key down operation function
     function handleKeyDown() {
         player.move(window.event);
     }
